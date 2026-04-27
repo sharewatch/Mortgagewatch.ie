@@ -1,5 +1,4 @@
 name: Daily Rate Scrape & Deploy
-
 on:
   schedule:
     - cron: '0 7 * * *'
@@ -13,34 +12,28 @@ on:
         description: 'Dry run — scrape but do not deploy'
         type: boolean
         default: false
-
 jobs:
   scrape-and-deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 30
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: 'pip'
           cache-dependency-path: scraper/requirements.txt
-
       - name: Install Python dependencies
         run: |
           pip install -r scraper/requirements.txt
-
       - name: Install Playwright Chromium
         run: |
           sudo apt-get install -y libasound2t64
           playwright install chromium
-
       - name: Scrape mortgage rates
         run: |
           cd scraper
@@ -49,11 +42,9 @@ jobs:
           else
             python scrape.py --verbose
           fi
-
       - name: Show rate changes
         run: |
           git diff data/rates.json || echo "No changes to rates.json"
-
       - name: Commit rates.json
         if: ${{ github.event.inputs.dry_run != 'true' }}
         run: |
@@ -64,7 +55,6 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Deploy rates.json to server
         if: ${{ github.event.inputs.dry_run != 'true' }}
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -76,9 +66,7 @@ jobs:
           server-dir: ${{ secrets.FTP_REMOTE_PATH }}data/
           include: |
             rates.json
-
       - name: Notify on failure
         if: failure()
         run: |
           echo "::warning::Rate scrape failed. Existing rates.json retained on server."
-
