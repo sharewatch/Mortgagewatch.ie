@@ -36,18 +36,13 @@ jobs:
         run: |
           pip install -r scraper/requirements.txt
 
-     - name: Install Playwright Chromium
+- name: Install Playwright Chromium
   run: |
-    playwright install --with-deps chromium
+    sudo apt-get install -y libasound2t64
+    playwright install chromium
 
-      - name: Scrape mortgage rates
-        run: |
-          cd scraper
-          if [ -n "${{ github.event.inputs.lender }}" ]; then
-            python scrape.py --lender ${{ github.event.inputs.lender }} --verbose
-          else
-            python scrape.py --verbose
-          fi
+
+
 
       - name: Show rate changes
         run: |
