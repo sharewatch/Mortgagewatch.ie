@@ -36,10 +36,9 @@ jobs:
         run: |
           pip install -r scraper/requirements.txt
 
-      - name: Install Playwright Chromium
-        run: |
-          playwright install chromium
-          playwright install-deps chromium
+     - name: Install Playwright Chromium
+  run: |
+    playwright install --with-deps chromium
 
       - name: Scrape mortgage rates
         run: |
