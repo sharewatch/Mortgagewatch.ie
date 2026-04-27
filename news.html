@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Irish Mortgage Rate News 2026 | MortgageWatch.ie</title>
+<meta name="description" content="Latest Irish mortgage rate news, ECB interest rate decisions, and lender rate changes. Stay up to date with MortgageWatch.ie.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/main.css">
+<style>
+.news-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 40px;
+  align-items: start;
+}
+.news-list { display: flex; flex-direction: column; gap: 24px; }
+
+.news-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+.news-card:hover { box-shadow: var(--shadow-md); border-color: #A0B0CC; }
+.news-card.featured { border-left: 4px solid var(--green); }
+
+.news-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.news-date { font-size: 12px; color: var(--text-muted); }
+.news-tag {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.tag-ecb { background: #EBF0FD; color: #2D4ED8; }
+.tag-lender { background: var(--green-pale); color: var(--green); }
+.tag-market { background: #FEF3C7; color: #92400E; }
+.tag-guide { background: #F3E8FF; color: #6B21A8; }
+
+.news-card h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+.news-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+.news-card p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
+.news-card p + p { margin-top: 12px; }
+
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--green);
+  text-decoration: none;
+  cursor: default;
+}
+
+/* Sidebar */
+.sidebar { display: flex; flex-direction: column; gap: 20px; position: sticky; top: 80px; }
+
+.sidebar-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+.sidebar-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ECB timeline */
+.ecb-timeline { display: flex; flex-direction: column; gap: 12px; }
+.ecb-item { display: flex; align-items: center; gap: 12px; }
+.ecb-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.ecb-dot.cut { background: var(--green); }
+.ecb-dot.hold { background: var(--text-muted); }
+.ecb-dot.hike { background: var(--red); }
+.ecb-item-info { flex: 1; }
+.ecb-item-date { font-size: 12px; color: var(--text-muted); }
+.ecb-item-action { font-size: 13px; font-weight: 600; color: var(--navy); }
+.ecb-item-rate { font-size: 12px; color: var(--text-muted); }
+
+/* Rate change table */
+.rate-change-table { width: 100%; font-size: 13px; border-collapse: collapse; }
+.rate-change-table td { padding: 8px 0; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.rate-change-table tr:last-child td { border-bottom: none; }
+.change-up { color: var(--red); font-weight: 600; }
+.change-down { color: var(--green); font-weight: 600; }
+.change-hold { color: var(--text-muted); }
+
+@media(max-width:900px){
+  .news-layout { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="page-header-eyebrow">Rate News</div>
+    <h1>Irish Mortgage Rate News</h1>
+    <p>ECB decisions, lender rate changes, and market analysis — everything that affects what you pay on your mortgage.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="news-layout">
+
+      <!-- MAIN NEWS -->
+      <div class="news-list">
+
+        <div class="news-card featured">
+          <div class="news-meta">
+            <span class="news-tag tag-ecb">ECB Decision</span>
+            <span class="news-date">April 2025</span>
+          </div>
+          <h2>ECB cuts rates to 2.40% — what it means for Irish mortgage holders</h2>
+          <p>The European Central Bank reduced its key interest rate by 25 basis points in April 2025, bringing the deposit facility rate to 2.40%. This was the seventh consecutive cut since the ECB began its easing cycle in June 2024, when rates peaked at 4.00%.</p>
+          <p>For Irish variable-rate mortgage holders, cuts typically pass through within one to three months, depending on the lender. Fixed-rate holders will not see any immediate change but may benefit when their fixed term expires and they come to renew.</p>
+          <p>Most analysts now expect rates to stabilise in the 2.00%–2.50% range through the remainder of 2025 and into 2026, though this is subject to inflation data and broader eurozone economic conditions.</p>
+        </div>
+
+        <div class="news-card">
+          <div class="news-meta">
+            <span class="news-tag tag-lender">Lender News</span>
+            <span class="news-date">March 2026</span>
+          </div>
+          <h3>Avant Money maintains position as Ireland's lowest fixed-rate lender</h3>
+          <p>Avant Money continues to offer the sharpest fixed rates in the Irish market, with their 3-year fixed rate at 60% LTV sitting at 3.25% — approximately 40–50 basis points below the pillar banks on equivalent products. The Spanish-backed (Bankinter) non-bank lender has maintained this competitive edge since entering the Irish market in 2020.</p>
+          <p>Avant is available exclusively through mortgage brokers. Borrowers interested in their rates should speak to a regulated Irish mortgage broker.</p>
+        </div>
+
+        <div class="news-card">
+          <div class="news-meta">
+            <span class="news-tag tag-lender">Lender News</span>
+            <span class="news-date">February 2026</span>
+          </div>
+          <h3>Green mortgage rates: which Irish lenders offer the best BER discount?</h3>
+          <p>Green mortgages — offered at preferential rates for homes with a BER rating of A or B — are now available from most major Irish lenders. Haven currently offers the most competitive green rate at 3.40% fixed for 5 years, followed closely by ICS Mortgages at 3.40% and Avant Money at 3.25% for their green product.</p>
+          <p>If your home has a BER of A or B, or you are purchasing or building an energy-efficient home, a green mortgage can save you a meaningful amount over the fixed term. Use our <a href="/calculator.html" style="color:var(--green);font-weight:500;">repayment calculator</a> to see the difference in monthly payments.</p>
+        </div>
+
+        <div class="news-card">
+          <div class="news-meta">
+            <span class="news-tag tag-market">Market Analysis</span>
+            <span class="news-date">January 2026</span>
+          </div>
+          <h3>Irish mortgage market outlook for 2026</h3>
+          <p>With the ECB easing cycle well underway, Irish mortgage rates have declined materially from their 2023–2024 peaks. The average 5-year fixed rate among major lenders has fallen from approximately 5.20% in late 2023 to around 3.80% in early 2026 — a reduction of roughly 140 basis points.</p>
+          <p>First-time buyer activity remains strong, supported by the Help to Buy scheme and the First Home Scheme. Switching activity has also picked up as existing mortgage holders seek to lock in lower rates ahead of any future increases.</p>
+          <p>Analysts at the main Irish banks forecast fixed rates to remain broadly stable in 2026, with modest further cuts possible if ECB easing continues. Variable rates may edge lower as earlier ECB cuts continue to pass through lender funding costs.</p>
+        </div>
+
+        <div class="news-card">
+          <div class="news-meta">
+            <span class="news-tag tag-guide">Guide</span>
+            <span class="news-date">December 2025</span>
+          </div>
+          <h3>Fixed vs variable: which is better for Irish borrowers right now?</h3>
+          <p>With rates having fallen significantly, many borrowers are asking whether to fix now or stay on a variable rate in anticipation of further ECB cuts. The answer depends on your circumstances, but the general consensus among Irish mortgage advisers is that locking in a competitive 3–5 year fixed rate now offers good value and payment certainty.</p>
+          <p>Variable rates remain higher than the best fixed rates for most lenders — meaning you are paying a premium for flexibility. Unless you expect to sell or make large overpayments in the near term, a fixed rate is worth considering for most borrowers.</p>
+          <p>Use our <a href="/rates.html" style="color:var(--green);font-weight:500;">comparison table</a> to see how fixed and variable rates compare across lenders today.</p>
+        </div>
+
+        <div class="news-card">
+          <div class="news-meta">
+            <span class="news-tag tag-lender">Lender News</span>
+            <span class="news-date">November 2025</span>
+          </div>
+          <h3>PTSB and Bank of Ireland maintain cashback offers</h3>
+          <p>Permanent TSB and Bank of Ireland continue to offer cashback of €2,000 on most mortgage products. While cashback can be attractive — particularly for buyers who need cash for moving costs or fit-out — it is important to compare the total cost of the mortgage, not just the upfront incentive.</p>
+          <p>In most cases, a lower rate from a non-cashback lender will save more money over the fixed term than the cashback amount. Our calculator shows total interest paid as well as monthly repayments, so you can make a fair comparison.</p>
+        </div>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+
+        <div class="sidebar-card">
+          <h3>ECB Rate History</h3>
+          <div class="ecb-timeline">
+            <div class="ecb-item">
+              <div class="ecb-dot cut"></div>
+              <div class="ecb-item-info">
+                <div class="ecb-item-date">April 2025</div>
+                <div class="ecb-item-action">↓ Cut −0.25%</div>
+                <div class="ecb-item-rate">Rate: 2.40%</div>
+              </div>
+            </div>
+            <div class="ecb-item">
+              <div class="ecb-dot cut"></div>
+              <div class="ecb-item-info">
+                <div class="ecb-item-date">January 2025</div>
+                <div class="ecb-item-action">↓ Cut −0.25%</div>
+                <div class="ecb-item-rate">Rate: 2.65%</div>
+              </div>
+            </div>
+            <div class="ecb-item">
+              <div class="ecb-dot cut"></div>
+              <div class="ecb-item-info">
+                <div class="ecb-item-date">October 2024</div>
+                <div class="ecb-item-action">↓ Cut −0.25%</div>
+                <div class="ecb-item-rate">Rate: 2.90%</div>
+              </div>
+            </div>
+            <div class="ecb-item">
+              <div class="ecb-dot cut"></div>
+              <div class="ecb-item-info">
+                <div class="ecb-item-date">September 2024</div>
+                <div class="ecb-item-action">↓ Cut −0.25%</div>
+                <div class="ecb-item-rate">Rate: 3.15%</div>
+              </div>
+            </div>
+            <div class="ecb-item">
+              <div class="ecb-dot cut"></div>
+              <div class="ecb-item-info">
+                <div class="ecb-item-date">June 2024</div>
+                <div class="ecb-item-action">↓ First cut −0.25%</div>
+                <div class="ecb-item-rate">Rate: 3.75%</div>
+              </div>
+            </div>
+            <div class="ecb-item">
+              <div class="ecb-dot hold"></div>
+              <div class="ecb-item-info">
+                <div class="ecb-item-date">Sept 2023 – May 2024</div>
+                <div class="ecb-item-action">Hold at peak</div>
+                <div class="ecb-item-rate">Rate: 4.00%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>Recent Rate Changes</h3>
+          <table class="rate-change-table" id="rate-changes">
+            <tr><td colspan="3" style="color:var(--text-muted);">Loading…</td></tr>
+          </table>
+        </div>
+
+        <div class="sidebar-card" style="background:var(--navy);border-color:var(--navy);">
+          <h3 style="color:var(--white);border-color:rgba(255,255,255,0.1);">Rate alert</h3>
+          <p style="font-size:13px;color:rgba(255,255,255,0.6);margin-bottom:16px;">Compare today's rates and use our calculator to see what each lender would cost you.</p>
+          <a href="/calculator.html" class="btn-primary" style="width:100%;justify-content:center;display:flex;">Open Calculator</a>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<script src="/assets/js/shared.js"></script>
+<script>
+injectNav('news');
+injectFooter();
+
+async function init() {
+  const data = await loadRates();
+  if (!data) return;
+
+  const allRates = data.lenders.flatMap(l => l.rates.map(r => ({ ...r, lenderName: l.name })));
+  const sorted = [...allRates].sort((a, b) => a.rate - b.rate).slice(0, 6);
+
+  document.getElementById('rate-changes').innerHTML = sorted.map((r, i) => `
+    <tr>
+      <td style="font-weight:600;color:var(--navy);">${r.lenderName}</td>
+      <td style="color:var(--text-muted);font-size:12px;">${termLabel(r)}</td>
+      <td style="text-align:right;font-weight:700;color:var(--green);">${r.rate.toFixed(2)}%</td>
+    </tr>`).join('');
+}
+
+init();
+</script>
+</body>
+</html>

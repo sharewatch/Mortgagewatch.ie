@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>First-Time Buyer Mortgage Guide Ireland 2026 | MortgageWatch.ie</title>
+<meta name="description" content="Everything Irish first-time buyers need to know — Help to Buy, First Home Scheme, borrowing limits, best rates, stamp duty and step-by-step guide to getting your first mortgage.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/main.css">
+<style>
+/* ── LAYOUT ── */
+.guide-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 48px;
+  align-items: start;
+}
+.guide-content { min-width: 0; }
+.guide-sidebar { position: sticky; top: 80px; display: flex; flex-direction: column; gap: 20px; }
+
+/* ── SCHEME CARDS ── */
+.scheme-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 28px 0;
+}
+.scheme-card {
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  border: 1px solid var(--border);
+}
+.scheme-card.htb { border-top: 4px solid var(--green); background: var(--green-pale); }
+.scheme-card.fhs { border-top: 4px solid #2D4ED8; background: #EBF0FD; }
+.scheme-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.scheme-card.htb h3 { color: var(--green); }
+.scheme-card.fhs h3 { color: #2D4ED8; }
+.scheme-card .scheme-amount {
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  margin: 10px 0 6px;
+}
+.scheme-card.htb .scheme-amount { color: var(--green); }
+.scheme-card.fhs .scheme-amount { color: #2D4ED8; }
+.scheme-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+.scheme-card ul { list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
+.scheme-card li { font-size: 13px; color: var(--text-secondary); padding-left: 18px; position: relative; }
+.scheme-card li::before { content: '✓'; position: absolute; left: 0; font-weight: 700; }
+.scheme-card.htb li::before { color: var(--green); }
+.scheme-card.fhs li::before { color: #2D4ED8; }
+
+/* ── CONTENT SECTIONS ── */
+.guide-section {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+.guide-section h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.guide-section h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--navy);
+  margin: 20px 0 8px;
+}
+.guide-section h3:first-of-type { margin-top: 0; }
+.guide-section p { font-size: 15px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 12px; }
+.guide-section p:last-child { margin-bottom: 0; }
+.guide-section ul, .guide-section ol {
+  padding-left: 20px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.guide-section li { font-size: 15px; color: var(--text-secondary); line-height: 1.65; }
+.guide-section strong { color: var(--text-primary); font-weight: 600; }
+.guide-section a { color: var(--green); font-weight: 500; }
+
+/* ── INFO BOX ── */
+.info-box {
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  margin: 16px 0;
+  font-size: 14px;
+  line-height: 1.65;
+  display: flex;
+  gap: 12px;
+}
+.info-box.tip { background: var(--green-pale); border: 1px solid #A7D9B8; color: #1A5C35; }
+.info-box.note { background: #EBF0FD; border: 1px solid #BCCEF5; color: #1E3A8A; }
+.info-box.warn { background: #FEF3C7; border: 1px solid #FDE68A; color: #92400E; }
+.info-box-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+
+/* ── BORROWING TABLE ── */
+.borrow-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+.borrow-table th { background: var(--navy); color: var(--white); padding: 10px 14px; text-align: left; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; }
+.borrow-table th.right { text-align: right; }
+.borrow-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); color: var(--text-secondary); }
+.borrow-table td.right { text-align: right; font-weight: 600; color: var(--navy); }
+.borrow-table tr:last-child td { border-bottom: none; }
+.borrow-table tr:hover td { background: #F0F5FF; }
+
+/* ── STEPS ── */
+.steps { display: flex; flex-direction: column; gap: 0; }
+.step { display: flex; gap: 20px; padding-bottom: 28px; position: relative; }
+.step:last-child { padding-bottom: 0; }
+.step:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 19px;
+  top: 44px;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+.step-num {
+  width: 40px; height: 40px;
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  font-weight: 700;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+.step-body { flex: 1; padding-top: 6px; }
+.step-body h4 { font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+.step-body p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+
+/* ── STAMP DUTY ── */
+.duty-band {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+}
+.duty-band.band1 { background: var(--green-pale); }
+.duty-band.band2 { background: #FEF3C7; }
+.duty-band.band3 { background: #FEE2E2; }
+.duty-band-range { font-size: 14px; color: var(--text-secondary); }
+.duty-band-rate { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 700; }
+.duty-band.band1 .duty-band-rate { color: var(--green); }
+.duty-band.band2 .duty-band-rate { color: #92400E; }
+.duty-band.band3 .duty-band-rate { color: var(--red); }
+
+/* ── COST TABLE ── */
+.cost-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.cost-table td { padding: 10px 0; border-bottom: 1px solid var(--border); color: var(--text-secondary); }
+.cost-table tr:last-child td { border-bottom: none; font-weight: 700; color: var(--navy); }
+.cost-table .amount { text-align: right; font-weight: 600; color: var(--navy); }
+
+/* ── SIDEBAR ── */
+.sidebar-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+.sidebar-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.sidebar-links { display: flex; flex-direction: column; gap: 4px; }
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--navy);
+  transition: background 0.12s;
+}
+.sidebar-link:hover { background: var(--off-white); }
+.sidebar-link span { color: var(--text-muted); font-size: 12px; }
+
+.toc { display: flex; flex-direction: column; gap: 2px; }
+.toc a {
+  display: block;
+  padding: 7px 10px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  border-left: 2px solid transparent;
+  transition: all 0.12s;
+}
+.toc a:hover { color: var(--navy); background: var(--off-white); border-left-color: var(--green); }
+
+.rates-snapshot { display: flex; flex-direction: column; gap: 10px; }
+.rate-snap-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background: var(--off-white);
+  border-radius: var(--radius-sm);
+}
+.rate-snap-lender { font-size: 13px; font-weight: 600; color: var(--navy); }
+.rate-snap-term { font-size: 11px; color: var(--text-muted); }
+.rate-snap-rate { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 700; color: var(--green); }
+
+@media(max-width:900px){
+  .guide-layout { grid-template-columns: 1fr; }
+  .guide-sidebar { position: static; }
+  .scheme-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="page-header-eyebrow">Guide</div>
+    <h1>First-Time Buyer Mortgage Guide</h1>
+    <p>Everything you need to know about buying your first home in Ireland — borrowing limits, government schemes, rates, and costs — explained clearly.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="guide-layout">
+
+      <!-- MAIN CONTENT -->
+      <div class="guide-content">
+
+        <!-- GOVERNMENT SCHEMES -->
+        <div class="guide-section" id="schemes">
+          <h2>Government schemes for first-time buyers</h2>
+          <p>The Irish Government operates two key schemes to help first-time buyers get onto the property ladder. Both are available in 2026 and can be used simultaneously.</p>
+
+          <div class="scheme-grid">
+            <div class="scheme-card htb">
+              <h3>Help to Buy (HTB)</h3>
+              <div class="scheme-amount">€30,000</div>
+              <p>A tax rebate of up to €30,000 or 10% of the purchase price — whichever is lower — for new-build homes.</p>
+              <ul>
+                <li>New-build or self-build homes only</li>
+                <li>Maximum property value: €500,000</li>
+                <li>Must be your principal private residence</li>
+                <li>Claimed via Revenue — paid directly to developer</li>
+                <li>Must have paid sufficient tax in prior 4 years</li>
+              </ul>
+            </div>
+            <div class="scheme-card fhs">
+              <h3>First Home Scheme (FHS)</h3>
+              <div class="scheme-amount">30%</div>
+              <p>The Government and participating banks take an equity stake of up to 30% in your home to bridge the gap between your deposit/mortgage and the purchase price.</p>
+              <ul>
+                <li>New-build and second-hand homes</li>
+                <li>Combined with HTB where eligible</li>
+                <li>No repayments required — equity share instead</li>
+                <li>You can buy out the state's share later</li>
+                <li>Available in all counties</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="info-box tip">
+            <span class="info-box-icon">💡</span>
+            <span>You can use <strong>both HTB and the First Home Scheme together</strong> on a new-build property. Combined, they can significantly reduce the mortgage you need to borrow — and therefore your monthly repayments.</span>
+          </div>
+        </div>
+
+        <!-- BORROWING LIMITS -->
+        <div class="guide-section" id="borrowing">
+          <h2>How much can you borrow?</h2>
+          <p>The Central Bank of Ireland sets mortgage lending rules for all regulated lenders. As a first-time buyer, the rules are slightly more generous than for subsequent buyers.</p>
+
+          <h3>Loan-to-Income (LTI) limit</h3>
+          <p>You can borrow up to <strong>4 times your gross annual income</strong> as a first-time buyer. For a couple, this is based on combined income.</p>
+
+          <table class="borrow-table">
+            <thead>
+              <tr><th>Gross Income</th><th class="right">Max Mortgage (4× LTI)</th><th class="right">With HTB (€30k)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>€50,000 (single)</td><td class="right">€200,000</td><td class="right">€230,000</td></tr>
+              <tr><td>€70,000 (single)</td><td class="right">€280,000</td><td class="right">€310,000</td></tr>
+              <tr><td>€80,000 (couple)</td><td class="right">€320,000</td><td class="right">€350,000</td></tr>
+              <tr><td>€100,000 (couple)</td><td class="right">€400,000</td><td class="right">€430,000</td></tr>
+              <tr><td>€120,000 (couple)</td><td class="right">€480,000</td><td class="right">€510,000</td></tr>
+            </tbody>
+          </table>
+
+          <div class="info-box note">
+            <span class="info-box-icon">ℹ</span>
+            <span>Some lenders may apply <strong>stress-testing</strong> at a higher rate (typically 2% above the current fixed rate), which can reduce the amount you qualify for in practice. A broker can help identify which lender will offer the most for your specific income profile.</span>
+          </div>
+
+          <h3>Loan-to-Value (LTV) limit</h3>
+          <p>First-time buyers can borrow up to <strong>90% of the property's value</strong>, meaning you need a minimum <strong>10% deposit</strong>. For a property costing €390,000, that is a deposit of €39,000.</p>
+
+          <div class="info-box warn">
+            <span class="info-box-icon">⚠</span>
+            <span>While you can borrow at 90% LTV, <strong>most of the best rates require 80% LTV or lower</strong>. If you can save a 20% deposit, you will access significantly more competitive rates — particularly from non-bank lenders like Avant Money and ICS.</span>
+          </div>
+        </div>
+
+        <!-- BEST RATES FOR FTBs -->
+        <div class="guide-section" id="rates">
+          <h2>Best mortgage rates for first-time buyers</h2>
+          <p>Most lenders offer their standard fixed and variable rate products to first-time buyers. A few lenders offer specific FTB products or allow higher LTVs. Here are the most competitive options as of April 2026:</p>
+
+          <div class="rates-snapshot" id="ftb-rates">
+            <div style="text-align:center;padding:20px;color:var(--text-muted);">Loading rates…</div>
+          </div>
+
+          <div style="margin-top:16px;">
+            <a href="/rates.html" class="btn-primary">View Full Rate Comparison →</a>
+          </div>
+
+          <h3>Broker-only vs direct lenders</h3>
+          <p>As a first-time buyer, you have two routes: apply directly with a lender (AIB, Bank of Ireland, PTSB, EBS), or use a mortgage broker who can access broker-only lenders like Avant Money, Haven, ICS, and Finance Ireland.</p>
+          <p>Broker-only lenders are often significantly cheaper. A regulated mortgage broker is free to use — they are paid by the lender — and can compare across all lenders on your behalf. It is almost always worth getting a broker opinion alongside any direct application.</p>
+        </div>
+
+        <!-- COSTS -->
+        <div class="guide-section" id="costs">
+          <h2>Upfront costs to budget for</h2>
+          <p>Beyond your deposit, first-time buyers should budget for several additional costs. Here is a typical breakdown for a €390,000 property:</p>
+
+          <h3>Stamp Duty</h3>
+          <p>Stamp duty applies to residential property in Ireland at the following rates:</p>
+
+          <div class="duty-band band1">
+            <span class="duty-band-range">First €1,000,000</span>
+            <span class="duty-band-rate">1%</span>
+          </div>
+          <div class="duty-band band2">
+            <span class="duty-band-range">€1,000,001 – €1,500,000</span>
+            <span class="duty-band-rate">2%</span>
+          </div>
+          <div class="duty-band band3">
+            <span class="duty-band-range">Above €1,500,000</span>
+            <span class="duty-band-rate">6%</span>
+          </div>
+
+          <p style="margin-top:14px;">For a €390,000 property, stamp duty is <strong>€3,900</strong>. Note that stamp duty is payable on the full market value, not the amount you borrow.</p>
+
+          <h3>Full cost breakdown (€390,000 property)</h3>
+          <table class="cost-table">
+            <tr><td>Deposit (10% minimum)</td><td class="amount">€39,000</td></tr>
+            <tr><td>Stamp Duty (1%)</td><td class="amount">€3,900</td></tr>
+            <tr><td>Solicitor / Legal fees</td><td class="amount">~€2,500</td></tr>
+            <tr><td>Valuation report</td><td class="amount">~€185</td></tr>
+            <tr><td>Surveyor / snag list (new build)</td><td class="amount">~€350</td></tr>
+            <tr><td>Life assurance</td><td class="amount">~€500–€800/yr</td></tr>
+            <tr><td>Home insurance</td><td class="amount">~€400–€600/yr</td></tr>
+            <tr><td><strong>Total upfront (approx.)</strong></td><td class="amount"><strong>~€46,500</strong></td></tr>
+          </table>
+
+          <div class="info-box tip">
+            <span class="info-box-icon">💡</span>
+            <span>Some lenders (Bank of Ireland, PTSB) offer <strong>€2,000 cashback</strong> which can help offset some of these costs. However, always compare the total mortgage cost — a lower rate without cashback often saves more over the full term.</span>
+          </div>
+        </div>
+
+        <!-- STEP BY STEP -->
+        <div class="guide-section" id="steps">
+          <h2>Step-by-step: getting your first mortgage</h2>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <h4>Check your borrowing power</h4>
+                <p>Use our <a href="/calculator.html">repayment calculator</a> to get a sense of your monthly repayments at different loan amounts. Then check the LTI table above to see your maximum mortgage based on income.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <h4>Apply for Help to Buy</h4>
+                <p>Register with Revenue and apply for HTB online at revenue.ie. You will receive an HTB code valid for 5 years which you provide to your developer or solicitor at purchase.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <h4>Get a mortgage in principle (AIP)</h4>
+                <p>Apply for Approval in Principle with one or more lenders. This is a written indication of how much they will lend you. It typically requires payslips, P60, bank statements (6 months), and proof of deposit. An AIP is usually valid for 6–12 months.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-body">
+                <h4>Find your property</h4>
+                <p>With AIP in hand you are in a strong position to bid on properties. Estate agents take AIP holders more seriously than those without mortgage approval. New-build developers often require it to reserve a home.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">5</div>
+              <div class="step-body">
+                <h4>Formal mortgage application</h4>
+                <p>Once you have an accepted offer, you make a full mortgage application. The lender will commission a valuation of the property and underwrite your full application. This typically takes 2–4 weeks.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">6</div>
+              <div class="step-body">
+                <h4>Loan offer & legal process</h4>
+                <p>Your solicitor handles the conveyancing — title checks, contracts, and the legal transfer. You will need life assurance and home insurance in place before drawdown. The process from sale agreed to keys typically takes 8–12 weeks for second-hand, longer for new builds.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">7</div>
+              <div class="step-body">
+                <h4>Drawdown & move in</h4>
+                <p>Funds are drawn down on closing day, the balance is paid to the vendor, and you receive the keys. Your first mortgage repayment typically begins 30 days after drawdown.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="guide-sidebar">
+
+        <div class="sidebar-card">
+          <h3>On this page</h3>
+          <nav class="toc">
+            <a href="#schemes">Government Schemes</a>
+            <a href="#borrowing">Borrowing Limits</a>
+            <a href="#rates">Best FTB Rates</a>
+            <a href="#costs">Upfront Costs</a>
+            <a href="#steps">Step-by-Step Guide</a>
+          </nav>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>Useful tools</h3>
+          <div class="sidebar-links">
+            <a href="/calculator.html" class="sidebar-link">Repayment Calculator <span>→</span></a>
+            <a href="/rates.html" class="sidebar-link">Compare All Rates <span>→</span></a>
+            <a href="/green-mortgages.html" class="sidebar-link">Green Mortgages <span>→</span></a>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>External resources</h3>
+          <div class="sidebar-links">
+            <a href="https://www.revenue.ie/en/property/help-to-buy-incentive/index.aspx" class="sidebar-link" target="_blank" rel="noopener">Revenue — Help to Buy <span>↗</span></a>
+            <a href="https://www.firsthomescheme.ie" class="sidebar-link" target="_blank" rel="noopener">First Home Scheme <span>↗</span></a>
+            <a href="https://www.centralbank.ie/consumer-hub/mortgage-measures" class="sidebar-link" target="_blank" rel="noopener">Central Bank — Mortgage Rules <span>↗</span></a>
+            <a href="https://www.ccpc.ie/consumers/money/mortgages/" class="sidebar-link" target="_blank" rel="noopener">CCPC Mortgage Guide <span>↗</span></a>
+          </div>
+        </div>
+
+        <div class="sidebar-card" style="background:var(--navy);border-color:var(--navy);">
+          <h3 style="color:var(--white);border-color:rgba(255,255,255,0.1);">See your monthly cost</h3>
+          <p style="font-size:13px;color:rgba(255,255,255,0.6);margin-bottom:16px;">Enter your property value and deposit to compare repayments across every Irish lender.</p>
+          <a href="/calculator.html" class="btn-primary" style="display:flex;justify-content:center;width:100%;">Open Calculator</a>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<script src="/assets/js/shared.js"></script>
+<script>
+injectNav('ftb');
+injectFooter();
+
+async function init() {
+  const data = await loadRates();
+  if (!data) return;
+
+  const allRates = data.lenders.flatMap(l =>
+    l.rates.map(r => ({ ...r, lenderName: l.name, lenderInitials: l.initials, lenderColor: l.color, lenderId: l.id }))
+  );
+
+  // Show top 5 rates available at 90% LTV (relevant to FTBs)
+  const ftbRates = allRates
+    .filter(r => r.ltv_max >= 90 && r.type === 'fixed' && !r.green)
+    .sort((a, b) => a.rate - b.rate)
+    .slice(0, 5);
+
+  if (!ftbRates.length) {
+    document.getElementById('ftb-rates').innerHTML = '<div style="text-align:center;padding:16px;color:var(--text-muted);">No rates found.</div>';
+    return;
+  }
+
+  document.getElementById('ftb-rates').innerHTML = ftbRates.map((r, i) => `
+    <div class="rate-snap-row">
+      <div>
+        <div class="rate-snap-lender">${r.lenderName}</div>
+        <div class="rate-snap-term">${termLabel(r)} · Max ${r.ltv_max}% LTV${r.cashback ? ` · +€${r.cashback.toLocaleString()} cashback` : ''}</div>
+      </div>
+      <div style="text-align:right;">
+        <div class="rate-snap-rate">${r.rate.toFixed(2)}%</div>
+        ${i === 0 ? '<div style="font-size:11px;color:var(--green);font-weight:600;">★ Best FTB rate</div>' : ''}
+      </div>
+    </div>`).join('');
+}
+
+init();
+</script>
+</body>
+</html>

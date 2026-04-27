@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mortgage Repayment Calculator Ireland | MortgageWatch.ie</title>
+<meta name="description" content="Calculate your monthly mortgage repayments and see how rates from every Irish lender compare for your loan amount. Free Irish mortgage calculator.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/main.css">
+<style>
+.calc-grid {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+.calc-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 80px;
+}
+.calc-card h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 24px;
+}
+.input-group { margin-bottom: 22px; }
+.input-group label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.input-group label span {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  text-transform: none;
+  letter-spacing: 0;
+}
+.input-group input[type="range"] {
+  width: 100%;
+  height: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--border);
+  border-radius: 3px;
+  outline: none;
+  margin-bottom: 4px;
+}
+.input-group input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--navy);
+  cursor: pointer;
+  border: 3px solid var(--white);
+  box-shadow: 0 0 0 1px var(--navy);
+}
+.input-group input[type="range"]::-moz-range-thumb {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--navy);
+  cursor: pointer;
+  border: 3px solid var(--white);
+  box-shadow: 0 0 0 1px var(--navy);
+}
+.range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+.divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+
+.result-box {
+  background: var(--navy);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  text-align: center;
+  margin-top: 4px;
+}
+.result-box .result-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 4px;
+}
+.result-box .result-main {
+  font-family: 'Fraunces', serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+}
+.result-box .result-sub {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 4px;
+}
+
+.result-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 16px;
+}
+.result-stat {
+  background: var(--off-white);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  text-align: center;
+}
+.result-stat .stat-v {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+}
+.result-stat .stat-l {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.ltv-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 8px;
+}
+.ltv-green { background: var(--green-pale); color: var(--green); }
+.ltv-amber { background: #FEF3C7; color: #92400E; }
+.ltv-red { background: #FEE2E2; color: var(--red); }
+
+/* Right panel — lender comparison */
+.panel-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 8px; }
+.panel-header h2 { font-family: 'Fraunces', serif; font-size: 24px; font-weight: 700; color: var(--navy); }
+
+.mini-filter { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+
+.lender-rate-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 16px;
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+.lender-rate-card:hover { box-shadow: var(--shadow-sm); border-color: #A0B0CC; }
+.lender-rate-card.best { border-color: var(--green); border-left: 4px solid var(--green); }
+
+.lrc-logo {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.lrc-info .lrc-name { font-weight: 600; color: var(--navy); font-size: 15px; }
+.lrc-info .lrc-term { font-size: 12px; color: var(--text-muted); margin-top: 1px; }
+.lrc-rate { text-align: right; }
+.lrc-rate .lrc-pct { font-family: 'Fraunces', serif; font-size: 24px; font-weight: 700; color: var(--navy); }
+.lrc-rate .lrc-aprc { font-size: 11px; color: var(--text-muted); }
+.lrc-monthly { text-align: right; min-width: 100px; }
+.lrc-monthly .lrc-amount { font-size: 18px; font-weight: 600; color: var(--navy); }
+.lrc-monthly .lrc-label { font-size: 11px; color: var(--text-muted); }
+
+.saving-vs-best {
+  font-size: 11px;
+  color: var(--red);
+  font-weight: 500;
+  margin-top: 2px;
+}
+.saving-vs-best.positive { color: var(--green); }
+
+@media(max-width:900px){
+  .calc-grid { grid-template-columns: 1fr; }
+  .calc-card { position: static; }
+}
+@media(max-width:500px){
+  .lender-rate-card { grid-template-columns: auto 1fr auto; }
+  .lender-rate-card .lrc-rate { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="page-header-eyebrow">Free Tool</div>
+    <h1>Mortgage Repayment Calculator</h1>
+    <p>Adjust your loan amount, deposit, and term to see what you'd pay each month — across every Irish lender.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="calc-grid">
+
+      <!-- LEFT: CALCULATOR INPUTS -->
+      <div class="calc-card">
+        <h2>Your mortgage details</h2>
+
+        <div class="input-group">
+          <label>Property Value <span id="lbl-property">€390,000</span></label>
+          <input type="range" id="r-property" min="100000" max="2000000" step="10000" value="390000" oninput="update()">
+          <div class="range-labels"><span>€100k</span><span>€2m</span></div>
+        </div>
+
+        <div class="input-group">
+          <label>Deposit <span id="lbl-deposit">€87,500</span></label>
+          <input type="range" id="r-deposit" min="5" max="50" step="1" value="25" oninput="update()">
+          <div class="range-labels"><span>5%</span><span>50%</span></div>
+        </div>
+
+        <div id="ltv-box" class="ltv-indicator ltv-green">
+          <span>✓</span>
+          <span id="ltv-text">LTV: 75% — Good rates available</span>
+        </div>
+
+        <hr class="divider">
+
+        <div class="input-group">
+          <label>Mortgage Term <span id="lbl-term">30 years</span></label>
+          <input type="range" id="r-term" min="5" max="35" step="1" value="30" oninput="update()">
+          <div class="range-labels"><span>5 yrs</span><span>35 yrs</span></div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="result-box">
+          <div class="result-label">Best available monthly payment</div>
+          <div class="result-main" id="result-monthly">—</div>
+          <div class="result-sub" id="result-lender">Loading…</div>
+        </div>
+
+        <div class="result-stats">
+          <div class="result-stat">
+            <div class="stat-v" id="stat-loan">—</div>
+            <div class="stat-l">Loan amount</div>
+          </div>
+          <div class="result-stat">
+            <div class="stat-v" id="stat-ltv">—</div>
+            <div class="stat-l">Loan-to-value</div>
+          </div>
+          <div class="result-stat">
+            <div class="stat-v" id="stat-total">—</div>
+            <div class="stat-l">Total repaid</div>
+          </div>
+          <div class="result-stat">
+            <div class="stat-v" id="stat-interest">—</div>
+            <div class="stat-l">Total interest</div>
+          </div>
+        </div>
+
+        <div style="margin-top:16px;">
+          <a href="/rates.html" class="btn-primary" style="width:100%;justify-content:center;">Compare All Rates →</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: LENDER COMPARISON -->
+      <div>
+        <div class="panel-header">
+          <h2>Rates for your loan</h2>
+          <a href="/rates.html" style="font-size:13px;color:var(--green);font-weight:600;text-decoration:none;">Full comparison table →</a>
+        </div>
+
+        <div class="mini-filter">
+          <button class="filter-btn active" onclick="setCalcFilter('all', this)">All Types</button>
+          <button class="filter-btn" onclick="setCalcFilter('fixed', this)">Fixed</button>
+          <button class="filter-btn" onclick="setCalcFilter('variable', this)">Variable</button>
+          <button class="filter-btn" onclick="setCalcFilter('green', this)">Green</button>
+        </div>
+
+        <div id="lender-list">
+          <div style="text-align:center;padding:40px;color:var(--text-muted);">Loading lender rates…</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script src="/assets/js/shared.js"></script>
+<script>
+injectNav('calculator');
+injectFooter();
+
+let allRates = [];
+let calcFilter = 'all';
+
+function fmt(n) { return '€' + Math.round(n).toLocaleString('en-IE'); }
+function fmtShort(n) {
+  if (n >= 1000000) return '€' + (n/1000000).toFixed(2) + 'm';
+  if (n >= 1000) return '€' + Math.round(n/1000) + 'k';
+  return fmt(n);
+}
+
+function update() {
+  const property = parseInt(document.getElementById('r-property').value);
+  const depositPct = parseInt(document.getElementById('r-deposit').value);
+  const termYrs = parseInt(document.getElementById('r-term').value);
+
+  const deposit = Math.round(property * depositPct / 100);
+  const loan = property - deposit;
+  const ltv = Math.round(loan / property * 100);
+
+  document.getElementById('lbl-property').textContent = fmtShort(property);
+  document.getElementById('lbl-deposit').textContent = `${fmt(deposit)} (${depositPct}%)`;
+  document.getElementById('lbl-term').textContent = `${termYrs} year${termYrs !== 1 ? 's' : ''}`;
+
+  document.getElementById('stat-loan').textContent = fmtShort(loan);
+  document.getElementById('stat-ltv').textContent = ltv + '%';
+
+  const ltvBox = document.getElementById('ltv-box');
+  const ltvText = document.getElementById('ltv-text');
+  ltvBox.className = 'ltv-indicator';
+  if (ltv <= 60) { ltvBox.classList.add('ltv-green'); ltvText.textContent = `LTV: ${ltv}% — Best rates available`; }
+  else if (ltv <= 80) { ltvBox.classList.add('ltv-green'); ltvText.textContent = `LTV: ${ltv}% — Good rates available`; }
+  else if (ltv <= 90) { ltvBox.classList.add('ltv-amber'); ltvText.textContent = `LTV: ${ltv}% — Some lenders may apply higher rates`; }
+  else { ltvBox.classList.add('ltv-red'); ltvText.textContent = `LTV: ${ltv}% — Exceeds most lenders' maximum`; }
+
+  renderLenders(loan, ltv, termYrs);
+}
+
+function renderLenders(loan, ltv, termYrs) {
+  if (!allRates.length) return;
+
+  const eligible = allRates.filter(r => {
+    if (r.ltv_max < ltv) return false;
+    if (calcFilter === 'green' && !r.green) return false;
+    if (calcFilter === 'fixed' && (r.type !== 'fixed' || r.green)) return false;
+    if (calcFilter === 'variable' && r.type !== 'variable') return false;
+    return true;
+  });
+
+  const sorted = [...eligible].sort((a, b) => a.rate - b.rate);
+
+  if (!sorted.length) {
+    document.getElementById('lender-list').innerHTML = '<div style="text-align:center;padding:32px;color:var(--text-muted);">No eligible rates for your loan-to-value. Try a larger deposit.</div>';
+    document.getElementById('result-monthly').textContent = '—';
+    document.getElementById('result-lender').textContent = 'No eligible rates';
+    return;
+  }
+
+  const bestMonthly = calcMonthly(loan, sorted[0].rate, termYrs);
+  document.getElementById('result-monthly').textContent = fmt(bestMonthly) + '/mo';
+  document.getElementById('result-lender').textContent = `Best: ${sorted[0].lenderName} · ${sorted[0].rate.toFixed(2)}% · ${termLabel(sorted[0])}`;
+
+  const totalBest = bestMonthly * termYrs * 12;
+  document.getElementById('stat-total').textContent = fmtShort(totalBest);
+  document.getElementById('stat-interest').textContent = fmtShort(totalBest - loan);
+
+  document.getElementById('lender-list').innerHTML = sorted.map((r, i) => {
+    const monthly = calcMonthly(loan, r.rate, termYrs);
+    const diff = monthly - bestMonthly;
+    return `
+      <div class="lender-rate-card ${i === 0 ? 'best' : ''}">
+        <div class="lrc-logo" style="color:${r.lenderColor};border-color:${r.lenderColor}33;background:${r.lenderColor}11;">${r.lenderInitials}</div>
+        <div class="lrc-info">
+          <div class="lrc-name">${r.lenderName}</div>
+          <div class="lrc-term">${termLabel(r)} · Max ${r.ltv_max}% LTV${r.cashback ? ` · +€${r.cashback.toLocaleString()} cashback` : ''}</div>
+        </div>
+        <div class="lrc-rate">
+          <div class="lrc-pct">${r.rate.toFixed(2)}%</div>
+          <div class="lrc-aprc">APRC ${r.aprc.toFixed(2)}%</div>
+        </div>
+        <div class="lrc-monthly">
+          <div class="lrc-amount">${fmt(monthly)}<span style="font-size:12px;font-weight:400;">/mo</span></div>
+          ${i === 0
+            ? '<div class="lrc-label" style="color:var(--green);font-weight:600;">★ Best rate</div>'
+            : `<div class="saving-vs-best">+${fmt(diff)}/mo vs best</div>`}
+          <div style="margin-top:6px;"><a href="${r.affiliateUrl}" class="apply-btn ${i===0?'':'outline'}" target="_blank" rel="noopener">Apply</a></div>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function setCalcFilter(f, btn) {
+  calcFilter = f;
+  document.querySelectorAll('.mini-filter .filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  update();
+}
+
+async function init() {
+  const data = await loadRates();
+  if (!data) return;
+  data.lenders.forEach(lender => {
+    lender.rates.forEach(rate => {
+      allRates.push({ ...rate, lenderName: lender.name, lenderInitials: lender.initials, lenderColor: lender.color, lenderId: lender.id, affiliateUrl: lender.affiliate_url });
+    });
+  });
+  update();
+}
+
+init();
+</script>
+</body>
+</html>

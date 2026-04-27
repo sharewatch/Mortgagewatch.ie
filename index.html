@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MortgageWatch.ie – Ireland's Mortgage Rate Comparison</title>
+<meta name="description" content="Compare the latest mortgage rates from AIB, Bank of Ireland, PTSB, Avant Money and more. Ireland's most up-to-date mortgage rate comparison.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy: #0B1C3D;
+    --navy-mid: #162D5E;
+    --navy-light: #1E3A72;
+    --green: #005F2F;
+    --green-light: #007A3D;
+    --green-pale: #EAF5EE;
+    --gold: #B8952A;
+    --gold-light: #F5E9C8;
+    --white: #FFFFFF;
+    --off-white: #F6F8FA;
+    --border: #DDE3EC;
+    --text-primary: #0B1C3D;
+    --text-secondary: #4A5568;
+    --text-muted: #718096;
+    --red: #C0392B;
+    --amber: #D97706;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --shadow-sm: 0 1px 3px rgba(11,28,61,0.08), 0 1px 2px rgba(11,28,61,0.04);
+    --shadow-md: 0 4px 16px rgba(11,28,61,0.10), 0 2px 6px rgba(11,28,61,0.06);
+    --shadow-lg: 0 12px 40px rgba(11,28,61,0.14), 0 4px 12px rgba(11,28,61,0.08);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    color: var(--text-primary);
+    background: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAV ─── */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--navy);
+    border-bottom: 1px solid var(--navy-mid);
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .nav-logo-mark {
+    width: 34px;
+    height: 34px;
+    background: var(--green-light);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-logo-mark svg { width: 20px; height: 20px; }
+
+  .nav-logo-text {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.3px;
+  }
+
+  .nav-logo-text span { color: #5DD98A; }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 6px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition: color 0.15s, background 0.15s;
+  }
+
+  .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+
+  .nav-cta {
+    background: var(--green-light) !important;
+    color: var(--white) !important;
+    padding: 6px 16px !important;
+    border-radius: var(--radius-sm) !important;
+    transition: background 0.15s !important;
+  }
+
+  .nav-cta:hover { background: #009951 !important; }
+
+  .nav-mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: var(--white);
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--navy);
+    padding: 72px 24px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(0,95,47,0.22) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0,122,61,0.2);
+    border: 1px solid rgba(93,217,138,0.3);
+    border-radius: 20px;
+    padding: 4px 12px 4px 8px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #5DD98A;
+    margin-bottom: 20px;
+  }
+
+  .hero-badge-dot {
+    width: 6px;
+    height: 6px;
+    background: #5DD98A;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(36px, 4.5vw, 54px);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: #5DD98A;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.65;
+    margin-bottom: 32px;
+    max-width: 480px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--green-light);
+    color: var(--white);
+    padding: 13px 24px;
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.15s, transform 0.1s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover { background: #009951; transform: translateY(-1px); }
+  .btn-primary:active { transform: translateY(0); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.08);
+    color: var(--white);
+    padding: 13px 24px;
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: background 0.15s;
+  }
+
+  .btn-secondary:hover { background: rgba(255,255,255,0.14); }
+
+  /* Hero rate card */
+  .hero-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    backdrop-filter: blur(8px);
+  }
+
+  .hero-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .hero-card-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+
+  .hero-card-updated {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+  }
+
+  .hero-rate-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .hero-rate-row:last-child { border-bottom: none; }
+
+  .hero-rate-lender {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .lender-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .hero-rate-name { font-size: 14px; font-weight: 500; color: var(--white); }
+  .hero-rate-type { font-size: 12px; color: rgba(255,255,255,0.45); }
+
+  .hero-rate-value {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #5DD98A;
+  }
+
+  .hero-rate-label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    text-align: right;
+  }
+
+  /* ─── STATS BAR ─── */
+  .stats-bar {
+    background: var(--off-white);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .stats-bar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: stretch;
+  }
+
+  .stat-item {
+    flex: 1;
+    padding: 20px 24px;
+    border-right: 1px solid var(--border);
+    min-width: 0;
+  }
+
+  .stat-item:last-child { border-right: none; }
+
+  .stat-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 4px;
+  }
+
+  .stat-value {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1;
+  }
+
+  .stat-sub {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 3px;
+  }
+
+  .stat-sub.up { color: var(--red); }
+  .stat-sub.down { color: var(--green); }
+
+  /* ─── SECTION WRAPPER ─── */
+  .section { padding: 72px 24px; }
+  .section-alt { background: var(--off-white); }
+
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+
+  .section-header { margin-bottom: 40px; }
+
+  .section-eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--green);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(28px, 3vw, 38px);
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+    margin-bottom: 12px;
+  }
+
+  .section-desc {
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 560px;
+    line-height: 1.65;
+  }
+
+  /* ─── RATE TABLE ─── */
+  .rate-filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .filter-btn {
+    padding: 7px 16px;
+    border-radius: 20px;
+    border: 1.5px solid var(--border);
+    background: var(--white);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .filter-btn:hover { border-color: var(--navy); color: var(--navy); }
+  .filter-btn.active { background: var(--navy); border-color: var(--navy); color: var(--white); }
+
+  .rate-table-wrap {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .rate-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  .rate-table thead {
+    background: var(--navy);
+    color: var(--white);
+  }
+
+  .rate-table th {
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    white-space: nowrap;
+  }
+
+  .rate-table th.right { text-align: right; }
+
+  .rate-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.1s;
+  }
+
+  .rate-table tbody tr:last-child { border-bottom: none; }
+  .rate-table tbody tr:hover { background: #F0F5FF; }
+
+  .rate-table td {
+    padding: 16px 20px;
+    vertical-align: middle;
+  }
+
+  .rate-table td.right { text-align: right; }
+
+  .lender-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .lender-logo-placeholder {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+    background: var(--off-white);
+    color: var(--navy);
+  }
+
+  .lender-name { font-weight: 600; color: var(--navy); }
+  .lender-type { font-size: 12px; color: var(--text-muted); }
+
+  .rate-value {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .rate-badge {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .badge-fixed { background: #EBF0FD; color: #2D4ED8; }
+  .badge-variable { background: #FEF3C7; color: #92400E; }
+  .badge-green { background: var(--green-pale); color: var(--green); }
+
+  .best-rate-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--green-pale);
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 20px;
+  }
+
+  .apply-btn {
+    display: inline-block;
+    padding: 8px 18px;
+    background: var(--navy);
+    color: var(--white);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.15s;
+    white-space: nowrap;
+  }
+
+  .apply-btn:hover { background: var(--navy-light); }
+
+  .apply-btn.outline {
+    background: transparent;
+    border: 1.5px solid var(--navy);
+    color: var(--navy);
+  }
+
+  .apply-btn.outline:hover { background: var(--navy); color: var(--white); }
+
+  .table-footer {
+    padding: 16px 20px;
+    background: var(--off-white);
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .view-all-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--green);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .view-all-link:hover { color: var(--green-light); }
+
+  /* ─── LENDER GRID ─── */
+  .lender-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .lender-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    text-decoration: none;
+    transition: box-shadow 0.15s, border-color 0.15s, transform 0.1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .lender-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: #A0B0CC;
+    transform: translateY(-2px);
+  }
+
+  .lender-logo-box {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 800;
+    border: 1px solid var(--border);
+    background: var(--off-white);
+    color: var(--navy);
+  }
+
+  .lender-card-name { font-size: 14px; font-weight: 600; color: var(--navy); }
+
+  .lender-card-best {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--green);
+  }
+
+  .lender-card-label { font-size: 11px; color: var(--text-muted); }
+
+  /* ─── HOW IT WORKS ─── */
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    position: relative;
+  }
+
+  .steps-grid::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: calc(16.6% + 28px);
+    right: calc(16.6% + 28px);
+    height: 2px;
+    background: linear-gradient(90deg, var(--green-pale) 0%, var(--border) 100%);
+  }
+
+  .step-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .step-number {
+    width: 48px;
+    height: 48px;
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-title {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  .step-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+
+  /* ─── CTA BANNER ─── */
+  .cta-banner {
+    background: var(--navy);
+    padding: 72px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(0,122,61,0.25) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .cta-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+
+  .cta-inner h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .cta-inner p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 32px;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #060E1E;
+    padding: 56px 24px 32px;
+    color: rgba(255,255,255,0.55);
+    font-size: 14px;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 28px;
+  }
+
+  .footer-brand p {
+    margin-top: 12px;
+    line-height: 1.65;
+    max-width: 300px;
+    font-size: 13px;
+  }
+
+  .footer-col h4 {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 14px;
+  }
+
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+
+  .footer-col a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.15s;
+  }
+
+  .footer-col a:hover { color: var(--white); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 12px;
+  }
+
+  .footer-disclaimer {
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    line-height: 1.6;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  /* ─── DATA STATUS BANNER ─── */
+  .data-status {
+    background: #FFFBEB;
+    border: 1px solid #FDE68A;
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+    font-size: 13px;
+    color: #92400E;
+  }
+
+  .data-status-icon { font-size: 16px; flex-shrink: 0; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .lender-grid { grid-template-columns: repeat(2, 1fr); }
+    .steps-grid { grid-template-columns: 1fr; }
+    .steps-grid::before { display: none; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .stats-bar-inner { flex-wrap: wrap; }
+    .stat-item { border-right: none; border-bottom: 1px solid var(--border); flex: 0 0 50%; }
+  }
+
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .nav-mobile-toggle { display: block; }
+    .hero { padding: 48px 20px 56px; }
+    .section { padding: 48px 20px; }
+    .lender-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-top { grid-template-columns: 1fr; }
+    .rate-table { display: block; overflow-x: auto; }
+    .stat-item { flex: 0 0 100%; }
+    .hero-actions { flex-direction: column; }
+    .btn-primary, .btn-secondary { justify-content: center; }
+  }
+
+  /* ─── LOADING STATE ─── */
+  .skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.4s infinite;
+    border-radius: 4px;
+    display: inline-block;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 14L7 8L11 11L15 5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="15" cy="5" r="2" fill="#5DD98A"/>
+        </svg>
+      </div>
+      <span class="nav-logo-text">Mortgage<span>Watch</span>.ie</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/rates.html">Compare Rates</a></li>
+      <li><a href="/lenders/">Lenders</a></li>
+      <li><a href="/calculator.html">Calculator</a></li>
+      <li><a href="/first-time-buyers.html">First-Time Buyers</a></li>
+      <li><a href="/news.html">Rate News</a></li>
+      <li><a href="/rates.html" class="nav-cta">See All Rates</a></li>
+    </ul>
+    <button class="nav-mobile-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        Rates updated daily
+      </div>
+      <h1>Find Ireland's <em>best</em> mortgage rate today</h1>
+      <p class="hero-sub">Compare fixed and variable rates from every major Irish lender — AIB, Bank of Ireland, PTSB, Avant Money, Haven and more — all in one place.</p>
+      <div class="hero-actions">
+        <a href="/rates.html" class="btn-primary">
+          Compare All Rates
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/calculator.html" class="btn-secondary">
+          Repayment Calculator
+        </a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-header">
+        <span class="hero-card-title">Today's Best Rates</span>
+        <span class="hero-card-updated" id="hero-updated">—</span>
+      </div>
+      <div id="hero-rates-list">
+        <!-- Populated by JS -->
+        <div style="display:flex;align-items:center;justify-content:center;padding:32px;color:rgba(255,255,255,0.4);font-size:13px;">Loading rates...</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STATS BAR ─── -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stat-item">
+      <div class="stat-label">Lowest Fixed Rate</div>
+      <div class="stat-value" id="stat-lowest">—</div>
+      <div class="stat-sub" id="stat-lowest-lender">Loading…</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-label">ECB Base Rate</div>
+      <div class="stat-value">2.40%</div>
+      <div class="stat-sub down">↓ Cut Apr 2025</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-label">Lenders Tracked</div>
+      <div class="stat-value" id="stat-lenders">—</div>
+      <div class="stat-sub">Major Irish lenders</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-label">Rates Listed</div>
+      <div class="stat-value" id="stat-rates-count">—</div>
+      <div class="stat-sub">Fixed, variable & green</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── RATE TABLE ─── -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-header" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;">
+      <div>
+        <span class="section-eyebrow">Live Data</span>
+        <h2 class="section-title">Today's Mortgage Rates</h2>
+        <p class="section-desc">Showing best available rates per lender. <a href="/rates.html" style="color:var(--green);font-weight:500;">View full comparison table →</a></p>
+      </div>
+    </div>
+
+    <div class="data-status">
+      <span class="data-status-icon">⚠</span>
+      <span>Rate data is aggregated from lender websites and is for indicative purposes only. Always verify directly with your lender. <strong>Last verified: <span id="last-verified">—</span></strong></span>
+    </div>
+
+    <div class="rate-filters">
+      <button class="filter-btn active" onclick="filterRates('all', this)">All Types</button>
+      <button class="filter-btn" onclick="filterRates('fixed', this)">Fixed</button>
+      <button class="filter-btn" onclick="filterRates('variable', this)">Variable</button>
+      <button class="filter-btn" onclick="filterRates('green', this)">Green Mortgage</button>
+    </div>
+
+    <div class="rate-table-wrap">
+      <table class="rate-table" id="rate-table">
+        <thead>
+          <tr>
+            <th>Lender</th>
+            <th>Type</th>
+            <th>Term</th>
+            <th>Max LTV</th>
+            <th class="right">Rate</th>
+            <th class="right">APRC</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="rate-table-body">
+          <tr><td colspan="7" style="text-align:center;padding:32px;color:var(--text-muted);">Loading rates…</td></tr>
+        </tbody>
+      </table>
+      <div class="table-footer">
+        <span id="table-footer-count">—</span>
+        <a href="/rates.html" class="view-all-link">
+          View full comparison →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── LENDER GRID ─── -->
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">Lenders</span>
+      <h2 class="section-title">Every major Irish lender</h2>
+      <p class="section-desc">We track rates from all lenders operating in the Irish mortgage market.</p>
+    </div>
+    <div class="lender-grid" id="lender-grid">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ─── HOW IT WORKS ─── -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-header" style="text-align:center;max-width:560px;margin:0 auto 48px;">
+      <span class="section-eyebrow">How It Works</span>
+      <h2 class="section-title">Find your best rate in minutes</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <div class="step-title">Compare rates</div>
+        <p class="step-desc">Browse our live rate tables, filterable by fixed or variable, term length, and LTV. We track every major Irish lender daily.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <div class="step-title">Use the calculator</div>
+        <p class="step-desc">Plug in your property value and deposit to see your estimated monthly repayments side-by-side across lenders.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <div class="step-title">Apply or get advice</div>
+        <p class="step-desc">Apply directly through your chosen lender, or speak to a qualified Irish mortgage broker for personalised guidance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA BANNER ─── -->
+<div class="cta-banner">
+  <div class="cta-inner">
+    <h2>Not sure which rate is right for you?</h2>
+    <p>Our free calculator shows your monthly repayments across every lender — so you can see exactly what each rate means for your pocket.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="/calculator.html" class="btn-primary">Use the Calculator</a>
+      <a href="/first-time-buyers.html" class="btn-secondary">First-Time Buyer Guide</a>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo" style="display:inline-flex;">
+          <div class="nav-logo-mark">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M3 14L7 8L11 11L15 5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="5" r="2" fill="#5DD98A"/></svg>
+          </div>
+          <span class="nav-logo-text">Mortgage<span>Watch</span>.ie</span>
+        </a>
+        <p>Ireland's most up-to-date mortgage rate comparison. We track rates from every major Irish lender so you don't have to.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Compare</h4>
+        <ul>
+          <li><a href="/rates.html">All Rates</a></li>
+          <li><a href="/lenders/aib.html">AIB</a></li>
+          <li><a href="/lenders/boi.html">Bank of Ireland</a></li>
+          <li><a href="/lenders/ptsb.html">PTSB</a></li>
+          <li><a href="/lenders/avant.html">Avant Money</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Guides</h4>
+        <ul>
+          <li><a href="/first-time-buyers.html">First-Time Buyers</a></li>
+          <li><a href="/switchers.html">Switching Mortgage</a></li>
+          <li><a href="/green-mortgages.html">Green Mortgages</a></li>
+          <li><a href="/calculator.html">Calculator</a></li>
+          <li><a href="/news.html">Rate News</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/methodology.html">Our Methodology</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MortgageWatch.ie</span>
+      <span>Rates updated daily · Data sourced from lender websites</span>
+    </div>
+    <div class="footer-disclaimer">
+      MortgageWatch.ie is an independent comparison website. We are not regulated by the Central Bank of Ireland and do not provide financial advice. Rates shown are indicative and may differ from those offered to you. Always verify current rates directly with your lender or a regulated mortgage broker. We may earn a referral fee when you apply through links on this site.
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ─── SAMPLE DATA (will be replaced by fetch from /data/rates.json) ─── */
+const SAMPLE_DATA = {
+  last_updated: new Date().toISOString(),
+  lenders: [
+    {
+      id: "avant",
+      name: "Avant Money",
+      initials: "AV",
+      color: "#E63946",
+      affiliate_url: "#",
+      rates: [
+        { type: "fixed", term_years: 3, ltv_max: 60, rate: 3.25, aprc: 3.30, green: false, cashback: null },
+        { type: "fixed", term_years: 5, ltv_max: 80, rate: 3.45, aprc: 3.52, green: false, cashback: null },
+        { type: "fixed", term_years: 7, ltv_max: 80, rate: 3.55, aprc: 3.61, green: false, cashback: null }
+      ]
+    },
+    {
+      id: "aib",
+      name: "AIB",
+      initials: "AIB",
+      color: "#005F2F",
+      affiliate_url: "#",
+      rates: [
+        { type: "fixed", term_years: 3, ltv_max: 80, rate: 3.70, aprc: 3.77, green: false, cashback: null },
+        { type: "fixed", term_years: 5, ltv_max: 80, rate: 3.85, aprc: 3.92, green: false, cashback: null },
+        { type: "green", term_years: 5, ltv_max: 80, rate: 3.50, aprc: 3.57, green: true, cashback: null }
+      ]
+    },
+    {
+      id: "boi",
+      name: "Bank of Ireland",
+      initials: "BOI",
+      color: "#002F6C",
+      affiliate_url: "#",
+      rates: [
+        { type: "fixed", term_years: 3, ltv_max: 80, rate: 3.75, aprc: 3.82, green: false, cashback: null },
+        { type: "fixed", term_years: 5, ltv_max: 80, rate: 3.90, aprc: 3.97, green: false, cashback: 2000 },
+        { type: "variable", term_years: null, ltv_max: 80, rate: 4.15, aprc: 4.23, green: false, cashback: null }
+      ]
+    },
+    {
+      id: "ptsb",
+      name: "PTSB",
+      initials: "PTSB",
+      color: "#9B1D20",
+      affiliate_url: "#",
+      rates: [
+        { type: "fixed", term_years: 2, ltv_max: 90, rate: 3.95, aprc: 4.02, green: false, cashback: 2000 },
+        { type: "fixed", term_years: 5, ltv_max: 80, rate: 3.85, aprc: 3.92, green: false, cashback: 2000 },
+        { type: "green", term_years: 5, ltv_max: 80, rate: 3.60, aprc: 3.67, green: true, cashback: 2000 }
+      ]
+    },
+    {
+      id: "haven",
+      name: "Haven",
+      initials: "HVN",
+      color: "#1A4F8A",
+      affiliate_url: "#",
+      rates: [
+        { type: "fixed", term_years: 3, ltv_max: 80, rate: 3.65, aprc: 3.72, green: false, cashback: null },
+        { type: "fixed", term_years: 5, ltv_max: 80, rate: 3.80, aprc: 3.87, green: false, cashback: null },
+        { type: "green", term_years: 5, ltv_max: 80, rate: 3.40, aprc: 3.47, green: true, cashback: null }
+      ]
+    },
+    {
+      id: "ebs",
+      name: "EBS",
+      initials: "EBS",
+      color: "#007B40",
+      affiliate_url: "#",
+      rates: [
+        { type: "fixed", term_years: 3, ltv_max: 90, rate: 3.80, aprc: 3.87, green: false, cashback: null },
+        { type: "variable", term_years: null, ltv_max: 90, rate: 4.20, aprc: 4.28, green: false, cashback: null }
+      ]
+    },
+    {
+      id: "ics",
+      name: "ICS Mortgages",
+      initials: "ICS",
+      color: "#4A2880",
+      affiliate_url: "#",
+      rates: [
+        { type: "fixed", term_years: 5, ltv_max: 75, rate: 3.55, aprc: 3.62, green: false, cashback: null },
+        { type: "fixed", term_years: 10, ltv_max: 75, rate: 3.75, aprc: 3.83, green: false, cashback: null }
+      ]
+    },
+    {
+      id: "finance-ireland",
+      name: "Finance Ireland",
+      initials: "FI",
+      color: "#C25A00",
+      affiliate_url: "#",
+      rates: [
+        { type: "fixed", term_years: 3, ltv_max: 80, rate: 3.70, aprc: 3.77, green: false, cashback: null },
+        { type: "green", term_years: 5, ltv_max: 80, rate: 3.45, aprc: 3.52, green: true, cashback: null }
+      ]
+    }
+  ]
+};
+
+let allRates = [];
+let currentFilter = 'all';
+
+function initData(data) {
+  const updated = new Date(data.last_updated);
+  const formatted = updated.toLocaleDateString('en-IE', { day: 'numeric', month: 'short', year: 'numeric' });
+  document.getElementById('hero-updated').textContent = formatted;
+  document.getElementById('last-verified').textContent = formatted;
+
+  let totalRates = 0;
+  allRates = [];
+
+  data.lenders.forEach(lender => {
+    lender.rates.forEach(rate => {
+      allRates.push({ ...rate, lenderName: lender.name, lenderInitials: lender.initials, lenderColor: lender.color, lenderId: lender.id, affiliateUrl: lender.affiliate_url });
+      totalRates++;
+    });
+  });
+
+  // Stats
+  const sorted = [...allRates].sort((a, b) => a.rate - b.rate);
+  const lowest = sorted[0];
+  document.getElementById('stat-lowest').textContent = lowest.rate.toFixed(2) + '%';
+  document.getElementById('stat-lowest-lender').textContent = lowest.lenderName + ' · ' + termLabel(lowest);
+  document.getElementById('stat-lenders').textContent = data.lenders.length;
+  document.getElementById('stat-rates-count').textContent = totalRates + '+';
+
+  renderHeroRates(sorted.slice(0, 5));
+  renderTable(allRates);
+  renderLenderGrid(data.lenders);
+}
+
+function termLabel(rate) {
+  if (rate.type === 'variable') return 'Variable';
+  if (rate.term_years) return rate.term_years + '-yr ' + (rate.green ? 'green' : 'fixed');
+  return 'Fixed';
+}
+
+function renderHeroRates(rates) {
+  const colors = ['#5DD98A', '#4FC8F5', '#F5C842', '#F58A42', '#D97FDB'];
+  document.getElementById('hero-rates-list').innerHTML = rates.map((r, i) => `
+    <div class="hero-rate-row">
+      <div class="hero-rate-lender">
+        <div class="lender-dot" style="background:${colors[i]}"></div>
+        <div>
+          <div class="hero-rate-name">${r.lenderName}</div>
+          <div class="hero-rate-type">${termLabel(r)}</div>
+        </div>
+      </div>
+      <div style="text-align:right;">
+        <div class="hero-rate-value">${r.rate.toFixed(2)}%</div>
+        <div class="hero-rate-label">APRC ${r.aprc.toFixed(2)}%</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderTable(rates) {
+  const sorted = [...rates].sort((a, b) => a.rate - b.rate);
+  const filtered = currentFilter === 'all' ? sorted : sorted.filter(r => {
+    if (currentFilter === 'green') return r.green;
+    return r.type === currentFilter;
+  });
+
+  const isLowest = filtered.length > 0 ? filtered[0] : null;
+
+  document.getElementById('rate-table-body').innerHTML = filtered.map((r, i) => `
+    <tr data-type="${r.type}" data-green="${r.green}">
+      <td>
+        <div class="lender-cell">
+          <div class="lender-logo-placeholder" style="color:${r.lenderColor};border-color:${r.lenderColor}22;background:${r.lenderColor}11;">${r.lenderInitials}</div>
+          <div>
+            <div class="lender-name">${r.lenderName}</div>
+            ${r.cashback ? `<div class="lender-type">€${r.cashback.toLocaleString()} cashback</div>` : ''}
+          </div>
+        </div>
+      </td>
+      <td>
+        <span class="rate-badge ${r.green ? 'badge-green' : r.type === 'fixed' ? 'badge-fixed' : 'badge-variable'}">
+          ${r.green ? '🌿 Green' : r.type === 'fixed' ? 'Fixed' : 'Variable'}
+        </span>
+      </td>
+      <td>${r.term_years ? r.term_years + ' years' : 'Ongoing'}</td>
+      <td>${r.ltv_max}%</td>
+      <td class="right">
+        <div class="rate-value">${r.rate.toFixed(2)}%</div>
+        ${i === 0 ? '<div class="best-rate-tag">★ Best</div>' : ''}
+      </td>
+      <td class="right" style="color:var(--text-secondary);font-size:14px;">${r.aprc.toFixed(2)}%</td>
+      <td class="right"><a href="${r.affiliateUrl}" class="apply-btn ${i === 0 ? '' : 'outline'}">Apply</a></td>
+    </tr>
+  `).join('');
+
+  document.getElementById('table-footer-count').textContent = `Showing ${filtered.length} rates`;
+}
+
+function renderLenderGrid(lenders) {
+  document.getElementById('lender-grid').innerHTML = lenders.map(l => {
+    const best = l.rates.reduce((min, r) => r.rate < min.rate ? r : min, l.rates[0]);
+    return `
+      <a href="/lenders/${l.id}.html" class="lender-card">
+        <div class="lender-logo-box" style="color:${l.color};border-color:${l.color}33;background:${l.color}11;">${l.initials}</div>
+        <div class="lender-card-name">${l.name}</div>
+        <div class="lender-card-best">${best.rate.toFixed(2)}%</div>
+        <div class="lender-card-label">from · ${termLabel(best)}</div>
+      </a>
+    `;
+  }).join('');
+}
+
+function filterRates(type, btn) {
+  currentFilter = type;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderTable(allRates);
+}
+
+function toggleMobileMenu() {
+  const links = document.querySelector('.nav-links');
+  if (links) {
+    links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+    links.style.flexDirection = 'column';
+    links.style.position = 'absolute';
+    links.style.top = '64px';
+    links.style.left = '0';
+    links.style.right = '0';
+    links.style.background = '#0B1C3D';
+    links.style.padding = '16px 24px';
+    links.style.borderTop = '1px solid rgba(255,255,255,0.08)';
+  }
+}
+
+/* ─── LOAD DATA ─── */
+async function loadRates() {
+  try {
+    const res = await fetch('/data/rates.json');
+    if (!res.ok) throw new Error('Not found');
+    const data = await res.json();
+    initData(data);
+  } catch {
+    // Fall back to sample data during development
+    initData(SAMPLE_DATA);
+  }
+}
+
+loadRates();
+</script>
+</body>
+</html>

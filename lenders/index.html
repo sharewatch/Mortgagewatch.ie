@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Irish Mortgage Lenders 2026 | MortgageWatch.ie</title>
+<meta name="description" content="Compare all Irish mortgage lenders — AIB, Bank of Ireland, PTSB, Avant Money, Haven, EBS, ICS and Finance Ireland. Find the best lender for your situation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/main.css">
+<style>
+.lender-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 20px;
+}
+.lender-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.15s, border-color 0.15s, transform 0.1s;
+}
+.lender-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: #A0B0CC;
+  transform: translateY(-2px);
+}
+.lender-card-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.lender-logo {
+  width: 56px; height: 56px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 800;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.lender-card-name {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy);
+}
+.lender-card-type {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+.lender-card-about {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  flex: 1;
+}
+.lender-card-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.lcs { text-align: center; }
+.lcs-val {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy);
+}
+.lcs-val.green { color: var(--green); }
+.lcs-label { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+.lender-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.tag-broker { background: #EBF0FD; color: #2D4ED8; }
+.tag-direct { background: var(--green-pale); color: var(--green); }
+.tag-cashback { background: #FEF3C7; color: #92400E; }
+.tag-green { background: var(--green-pale); color: var(--green); }
+
+.view-btn {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.lender-card:hover .view-btn { color: var(--green); }
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.intro-stat {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  text-align: center;
+}
+.intro-stat-val {
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--navy);
+}
+.intro-stat-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+@media(max-width:700px){
+  .lender-grid { grid-template-columns: 1fr; }
+  .intro-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="page-header-eyebrow">All Lenders</div>
+    <h1>Irish Mortgage Lenders</h1>
+    <p>Every lender operating in the Irish mortgage market — pillar banks, building societies, and specialist non-bank lenders. Compare rates, pros, cons and eligibility.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+
+    <div class="intro-grid">
+      <div class="intro-stat">
+        <div class="intro-stat-val" id="stat-lenders">8</div>
+        <div class="intro-stat-label">Lenders tracked</div>
+      </div>
+      <div class="intro-stat">
+        <div class="intro-stat-val" id="stat-lowest">—</div>
+        <div class="intro-stat-label">Lowest rate available</div>
+      </div>
+      <div class="intro-stat">
+        <div class="intro-stat-val" id="stat-updated">—</div>
+        <div class="intro-stat-label">Last updated</div>
+      </div>
+    </div>
+
+    <div class="lender-grid" id="lender-grid">
+      <div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--text-muted);">Loading lenders…</div>
+    </div>
+
+  </div>
+</section>
+
+<script src="/assets/js/shared.js"></script>
+<script>
+injectNav('lenders');
+injectFooter();
+
+function lenderType(l) {
+  const brokerOnly = ['avant','haven','ics','finance-ireland'];
+  return brokerOnly.includes(l.id) ? 'broker' : 'direct';
+}
+
+async function init() {
+  const data = await loadRates();
+  if (!data) return;
+
+  const allRatesList = data.lenders.flatMap(l => l.rates);
+  const lowest = [...allRatesList].sort((a,b) => a.rate - b.rate)[0];
+  document.getElementById('stat-lowest').textContent = lowest.rate.toFixed(2) + '%';
+  document.getElementById('stat-updated').textContent = formatDate(data.last_updated);
+  document.getElementById('stat-lenders').textContent = data.lenders.length;
+
+  document.getElementById('lender-grid').innerHTML = data.lenders.map(l => {
+    const sorted = [...l.rates].sort((a,b) => a.rate - b.rate);
+    const best = sorted[0];
+    const hasGreen = l.rates.some(r => r.green);
+    const type = lenderType(l);
+
+    return `
+      <a href="/lenders/${l.id}.html" class="lender-card">
+        <div class="lender-card-top">
+          <div class="lender-logo" style="color:${l.color};border-color:${l.color}33;background:${l.color}11;">${l.initials}</div>
+          <div>
+            <div class="lender-card-name">${l.name}</div>
+            <div class="lender-card-type">${type === 'broker' ? 'Broker-only lender' : 'Direct &amp; broker lender'}</div>
+          </div>
+        </div>
+        <p class="lender-card-about">${l.about.substring(0, 120)}…</p>
+        <div class="lender-card-stats">
+          <div class="lcs">
+            <div class="lcs-val green">${best.rate.toFixed(2)}%</div>
+            <div class="lcs-label">Best rate</div>
+          </div>
+          <div class="lcs">
+            <div class="lcs-val">${l.rates.length}</div>
+            <div class="lcs-label">Products</div>
+          </div>
+          <div class="lcs">
+            <div class="lcs-val">${l.rates[0].ltv_max}%</div>
+            <div class="lcs-label">Max LTV</div>
+          </div>
+        </div>
+        <div class="lender-card-footer">
+          <div style="display:flex;gap:6px;flex-wrap:wrap;">
+            <span class="tag ${type === 'broker' ? 'tag-broker' : 'tag-direct'}">${type === 'broker' ? 'Broker only' : 'Apply direct'}</span>
+            ${l.cashback_available ? '<span class="tag tag-cashback">Cashback</span>' : ''}
+            ${hasGreen ? '<span class="tag tag-green">🌿 Green rate</span>' : ''}
+          </div>
+          <span class="view-btn">View rates →</span>
+        </div>
+      </a>`;
+  }).join('');
+}
+
+init();
+</script>
+</body>
+</html>

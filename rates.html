@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compare Mortgage Rates Ireland 2026 | MortgageWatch.ie</title>
+<meta name="description" content="Compare all Irish mortgage rates in one place. Filter by fixed, variable or green. Updated daily from AIB, Bank of Ireland, PTSB, Avant Money, Haven, EBS, ICS and Finance Ireland.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/main.css">
+<style>
+.filters-bar {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  align-items: end;
+}
+.filter-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 6px;
+}
+.filter-group select, .filter-group input {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--text-primary);
+  background: var(--white);
+  cursor: pointer;
+  transition: border-color 0.15s;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23718096' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 30px;
+}
+.filter-group select:focus, .filter-group input:focus {
+  outline: none;
+  border-color: var(--navy);
+}
+.filter-reset {
+  padding: 9px 16px;
+  background: var(--off-white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.filter-reset:hover { border-color: var(--navy); color: var(--navy); }
+
+.sort-indicator { margin-left: 4px; opacity: 0.6; }
+.sort-indicator.active { opacity: 1; color: #5DD98A; }
+
+.monthly-cell { font-size: 13px; color: var(--text-secondary); }
+.monthly-amount { font-weight: 600; color: var(--text-primary); }
+
+.rate-row-highlight { background: #F0FBF4 !important; }
+
+.cashback-badge {
+  display: inline-block;
+  background: #FEF3C7;
+  color: #92400E;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 20px;
+  margin-top: 3px;
+}
+
+.compare-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.compare-box input { width: 15px; height: 15px; cursor: pointer; }
+
+.compare-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: var(--navy);
+  padding: 16px 24px;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  z-index: 50;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+}
+.compare-bar.visible { display: flex; }
+.compare-bar-items { display: flex; gap: 12px; flex-wrap: wrap; }
+.compare-chip {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 13px;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.compare-chip button {
+  background: none; border: none; color: rgba(255,255,255,0.6);
+  cursor: pointer; font-size: 14px; line-height: 1; padding: 0;
+}
+.compare-chip button:hover { color: var(--white); }
+
+@media(max-width:700px){
+  .filters-bar { grid-template-columns: 1fr 1fr; }
+  .rate-table td:nth-child(4), .rate-table th:nth-child(4) { display:none; }
+  .rate-table td:nth-child(6), .rate-table th:nth-child(6) { display:none; }
+}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="page-header-eyebrow">Live Data</div>
+    <h1>Compare Irish Mortgage Rates</h1>
+    <p>All rates from every major Irish lender, updated daily. Filter by type, term, and LTV to find the best deal for your situation.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+
+    <div class="data-status">
+      <span>⚠</span>
+      <span>Rates are aggregated from lender websites for indicative purposes only. Always verify with your lender before applying. Last updated: <strong id="last-updated">—</strong></span>
+    </div>
+
+    <!-- FILTERS -->
+    <div class="filters-bar">
+      <div class="filter-group">
+        <label>Rate Type</label>
+        <select id="f-type" onchange="applyFilters()">
+          <option value="all">All Types</option>
+          <option value="fixed">Fixed</option>
+          <option value="variable">Variable</option>
+          <option value="green">Green</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Fixed Term</label>
+        <select id="f-term" onchange="applyFilters()">
+          <option value="all">Any Term</option>
+          <option value="1">1 Year</option>
+          <option value="2">2 Years</option>
+          <option value="3">3 Years</option>
+          <option value="5">5 Years</option>
+          <option value="7">7 Years</option>
+          <option value="10">10 Years</option>
+          <option value="20">20 Years</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Max LTV</label>
+        <select id="f-ltv" onchange="applyFilters()">
+          <option value="all">Any LTV</option>
+          <option value="60">Up to 60%</option>
+          <option value="75">Up to 75%</option>
+          <option value="80">Up to 80%</option>
+          <option value="90">Up to 90%</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Lender</label>
+        <select id="f-lender" onchange="applyFilters()">
+          <option value="all">All Lenders</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Cashback</label>
+        <select id="f-cashback" onchange="applyFilters()">
+          <option value="all">With or without</option>
+          <option value="yes">Cashback only</option>
+          <option value="no">No cashback</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Monthly calc on (€)</label>
+        <input type="number" id="f-loan" placeholder="300,000" value="300000" oninput="applyFilters()" min="50000" max="2000000" step="10000">
+      </div>
+      <div class="filter-group" style="display:flex;align-items:flex-end;">
+        <button class="filter-reset" onclick="resetFilters()">Reset Filters</button>
+      </div>
+    </div>
+
+    <!-- TABLE -->
+    <div class="rate-table-wrap">
+      <table class="rate-table" id="rate-table">
+        <thead>
+          <tr>
+            <th onclick="sortBy('lender')">Lender <span class="sort-indicator" id="sort-lender"></span></th>
+            <th onclick="sortBy('type')">Type <span class="sort-indicator" id="sort-type"></span></th>
+            <th onclick="sortBy('term')">Term <span class="sort-indicator" id="sort-term"></span></th>
+            <th onclick="sortBy('ltv')" class="right">Max LTV <span class="sort-indicator" id="sort-ltv"></span></th>
+            <th onclick="sortBy('rate')" class="right">Rate <span class="sort-indicator active" id="sort-rate">↑</span></th>
+            <th onclick="sortBy('aprc')" class="right">APRC <span class="sort-indicator" id="sort-aprc"></span></th>
+            <th class="right">Est. Monthly</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="rate-tbody">
+          <tr><td colspan="8" style="text-align:center;padding:40px;color:var(--text-muted);">Loading rates…</td></tr>
+        </tbody>
+      </table>
+      <div class="table-footer">
+        <span id="results-count">—</span>
+        <span style="font-size:12px;">Monthly estimate based on 30-year term · <a href="/calculator.html" style="color:var(--green);">Use full calculator →</a></span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- COMPARE BAR -->
+<div class="compare-bar" id="compare-bar">
+  <div>
+    <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:6px;">Comparing rates</div>
+    <div class="compare-bar-items" id="compare-chips"></div>
+  </div>
+  <a href="#" id="compare-link" class="btn-primary btn-navy" style="white-space:nowrap;background:var(--green-light);">Compare Selected →</a>
+</div>
+
+<script src="/assets/js/shared.js"></script>
+<script>
+injectNav('rates');
+injectFooter();
+
+let allRates = [];
+let sortField = 'rate';
+let sortDir = 1;
+let compareSet = new Set();
+
+async function init() {
+  const data = await loadRates();
+  if (!data) { document.getElementById('rate-tbody').innerHTML = '<tr><td colspan="8" style="text-align:center;padding:40px;color:var(--text-muted);">Unable to load rate data. Please try again later.</td></tr>'; return; }
+
+  document.getElementById('last-updated').textContent = formatDate(data.last_updated);
+
+  // Build lender filter options
+  const lenderSel = document.getElementById('f-lender');
+  data.lenders.forEach(l => {
+    const opt = document.createElement('option');
+    opt.value = l.id;
+    opt.textContent = l.name;
+    lenderSel.appendChild(opt);
+  });
+
+  data.lenders.forEach(lender => {
+    lender.rates.forEach(rate => {
+      allRates.push({ ...rate, lenderName: lender.name, lenderInitials: lender.initials, lenderColor: lender.color, lenderId: lender.id, affiliateUrl: lender.affiliate_url });
+    });
+  });
+
+  applyFilters();
+}
+
+function applyFilters() {
+  const type = document.getElementById('f-type').value;
+  const term = document.getElementById('f-term').value;
+  const ltv = document.getElementById('f-ltv').value;
+  const lender = document.getElementById('f-lender').value;
+  const cashback = document.getElementById('f-cashback').value;
+
+  let filtered = allRates.filter(r => {
+    if (type !== 'all') {
+      if (type === 'green' && !r.green) return false;
+      if (type === 'fixed' && (r.type !== 'fixed' || r.green)) return false;
+      if (type === 'variable' && r.type !== 'variable') return false;
+    }
+    if (term !== 'all' && r.term_years !== parseInt(term)) return false;
+    if (ltv !== 'all' && r.ltv_max > parseInt(ltv)) return false;
+    if (lender !== 'all' && r.lenderId !== lender) return false;
+    if (cashback === 'yes' && !r.cashback) return false;
+    if (cashback === 'no' && r.cashback) return false;
+    return true;
+  });
+
+  filtered.sort((a, b) => {
+    let av, bv;
+    if (sortField === 'lender') { av = a.lenderName; bv = b.lenderName; return av.localeCompare(bv) * sortDir; }
+    if (sortField === 'type') { av = a.type; bv = b.type; return av.localeCompare(bv) * sortDir; }
+    if (sortField === 'term') { av = a.term_years || 99; bv = b.term_years || 99; }
+    if (sortField === 'ltv') { av = a.ltv_max; bv = b.ltv_max; }
+    if (sortField === 'rate') { av = a.rate; bv = b.rate; }
+    if (sortField === 'aprc') { av = a.aprc; bv = b.aprc; }
+    return (av - bv) * sortDir;
+  });
+
+  const loan = parseFloat(document.getElementById('f-loan').value) || 300000;
+  const bestRate = filtered.length ? filtered[0].rate : null;
+
+  document.getElementById('results-count').textContent = `Showing ${filtered.length} rate${filtered.length !== 1 ? 's' : ''}`;
+
+  if (!filtered.length) {
+    document.getElementById('rate-tbody').innerHTML = '<tr><td colspan="8" style="text-align:center;padding:40px;color:var(--text-muted);">No rates match your filters. Try broadening your search.</td></tr>';
+    return;
+  }
+
+  document.getElementById('rate-tbody').innerHTML = filtered.map((r, i) => {
+    const monthly = calcMonthly(loan, r.rate, 30);
+    const isChecked = compareSet.has(r.id);
+    return `
+      <tr class="${r.rate === bestRate ? 'rate-row-highlight' : ''}">
+        <td>
+          <div class="lender-cell">
+            <div class="lender-logo-placeholder" style="color:${r.lenderColor};border-color:${r.lenderColor}33;background:${r.lenderColor}11;">${r.lenderInitials}</div>
+            <div>
+              <div class="lender-name"><a href="/lenders/${r.lenderId}.html" style="color:var(--navy);text-decoration:none;">${r.lenderName}</a></div>
+              ${r.notes ? `<div class="lender-type">${r.notes}</div>` : ''}
+            </div>
+          </div>
+        </td>
+        <td><span class="rate-badge ${r.green ? 'badge-green' : r.type === 'fixed' ? 'badge-fixed' : 'badge-variable'}">${r.green ? '🌿 Green' : r.type === 'fixed' ? 'Fixed' : 'Variable'}</span></td>
+        <td>${r.term_years ? r.term_years + ' yrs' : 'Ongoing'}</td>
+        <td class="right">${r.ltv_max}%</td>
+        <td class="right">
+          <div class="rate-value">${r.rate.toFixed(2)}%</div>
+          ${r.rate === bestRate ? '<div class="best-rate-tag">★ Best</div>' : ''}
+          ${r.cashback ? `<div class="cashback-badge">+€${r.cashback.toLocaleString()} cashback</div>` : ''}
+        </td>
+        <td class="right" style="color:var(--text-secondary);font-size:14px;">${r.aprc.toFixed(2)}%</td>
+        <td class="right">
+          <div class="monthly-cell">
+            <span class="monthly-amount">€${Math.round(monthly).toLocaleString()}</span><span>/mo</span>
+          </div>
+        </td>
+        <td class="right" style="min-width:130px;">
+          <div style="display:flex;align-items:center;gap:8px;justify-content:flex-end;">
+            <label class="compare-box" title="Add to compare">
+              <input type="checkbox" onchange="toggleCompare('${r.id}', '${r.lenderName}', '${r.rate.toFixed(2)}%', this)" ${isChecked ? 'checked' : ''}> Compare
+            </label>
+            <a href="${r.affiliateUrl}" class="apply-btn ${i === 0 ? '' : 'outline'}" target="_blank" rel="noopener">Apply</a>
+          </div>
+        </td>
+      </tr>`;
+  }).join('');
+}
+
+function sortBy(field) {
+  if (sortField === field) sortDir *= -1; else { sortField = field; sortDir = 1; }
+  document.querySelectorAll('.sort-indicator').forEach(el => { el.textContent = ''; el.classList.remove('active'); });
+  const el = document.getElementById('sort-' + field);
+  if (el) { el.textContent = sortDir === 1 ? '↑' : '↓'; el.classList.add('active'); }
+  applyFilters();
+}
+
+function resetFilters() {
+  ['f-type','f-term','f-ltv','f-lender','f-cashback'].forEach(id => document.getElementById(id).value = 'all');
+  document.getElementById('f-loan').value = '300000';
+  sortField = 'rate'; sortDir = 1;
+  document.querySelectorAll('.sort-indicator').forEach(el => { el.textContent = ''; el.classList.remove('active'); });
+  document.getElementById('sort-rate').textContent = '↑'; document.getElementById('sort-rate').classList.add('active');
+  applyFilters();
+}
+
+function toggleCompare(id, lender, rate, cb) {
+  if (cb.checked) {
+    if (compareSet.size >= 3) { cb.checked = false; alert('You can compare up to 3 rates at a time.'); return; }
+    compareSet.set ? null : null;
+    compareSet.add(id);
+  } else {
+    compareSet.delete(id);
+  }
+  updateCompareBar();
+}
+
+function updateCompareBar() {
+  const bar = document.getElementById('compare-bar');
+  if (compareSet.size === 0) { bar.classList.remove('visible'); return; }
+  bar.classList.add('visible');
+  const chips = document.getElementById('compare-chips');
+  chips.innerHTML = [...compareSet].map(id => {
+    const r = allRates.find(x => x.id === id);
+    return r ? `<div class="compare-chip">${r.lenderName} · ${r.rate.toFixed(2)}% <button onclick="removeCompare('${id}')">×</button></div>` : '';
+  }).join('');
+}
+
+function removeCompare(id) {
+  compareSet.delete(id);
+  const cb = document.querySelector(`input[onchange*="${id}"]`);
+  if (cb) cb.checked = false;
+  updateCompareBar();
+}
+
+init();
+</script>
+</body>
+</html>
