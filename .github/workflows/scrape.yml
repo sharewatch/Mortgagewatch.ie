@@ -33,6 +33,7 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
      - name: Deploy to server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
