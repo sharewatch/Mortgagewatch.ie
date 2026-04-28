@@ -33,13 +33,12 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Deploy to server
+     - name: Deploy to server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          security: loose
           local-dir: ./data/
           server-dir: ${{ secrets.FTP_REMOTE_PATH }}data/
-          include: |
-            rates.json
