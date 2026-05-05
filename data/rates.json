@@ -25,23 +25,34 @@
       "cashback_available": false,
       "rates": [
         {
-          "id": "av-f3-60",
-          "type": "fixed",
-          "term_years": 3,
-          "ltv_max": 60,
-          "rate": 3.45,
-          "aprc": 3.52,
-          "green": false,
-          "cashback": null,
-          "notes": "Best 3yr <60% LTV"
-        },
-        {
           "id": "av-f3-80",
           "type": "fixed",
           "term_years": 3,
           "ltv_max": 80,
+          "rate": 3.45,
+          "aprc": 3.74,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "av-f4-80",
+          "type": "fixed",
+          "term_years": 4,
+          "ltv_max": 80,
           "rate": 3.4,
-          "aprc": 3.47,
+          "aprc": 3.7,
+          "green": false,
+          "cashback": null,
+          "notes": "Best Avant rate"
+        },
+        {
+          "id": "av-f4-90",
+          "type": "fixed",
+          "term_years": 4,
+          "ltv_max": 90,
+          "rate": 3.7,
+          "aprc": 3.94,
           "green": false,
           "cashback": null,
           "notes": ""
@@ -362,4 +373,365 @@
           "rate": 4.05,
           "aprc": 4.13,
           "green": false,
-          "cashback": 2000
+          "cashback": 2000,
+          "notes": ""
+        },
+        {
+          "id": "boi-f10-80",
+          "type": "fixed",
+          "term_years": 10,
+          "ltv_max": 80,
+          "rate": 4.15,
+          "aprc": 4.24,
+          "green": false,
+          "cashback": 2000,
+          "notes": ""
+        },
+        {
+          "id": "boi-v-80",
+          "type": "variable",
+          "term_years": null,
+          "ltv_max": 80,
+          "rate": 4.2,
+          "aprc": 4.28,
+          "green": false,
+          "cashback": 2000,
+          "notes": ""
+        },
+        {
+          "id": "boi-g5-80",
+          "type": "fixed",
+          "term_years": 5,
+          "ltv_max": 80,
+          "rate": 3.65,
+          "aprc": 3.72,
+          "green": true,
+          "cashback": 2000,
+          "notes": "BER A or B required"
+        }
+      ]
+    },
+    {
+      "id": "ptsb",
+      "name": "PTSB",
+      "initials": "PTSB",
+      "color": "#9B1D20",
+      "url": "https://www.permanenttsb.ie/mortgages",
+      "affiliate_url": "https://www.permanenttsb.ie/mortgages",
+      "about": "Permanent TSB (PTSB) is Ireland's third-largest bank and a major mortgage lender. They offer competitive cashback deals and are often the most accessible lender for first-time buyers with smaller deposits.",
+      "pros": [
+        "\u20ac2,000\u2013\u20ac3,000 cashback available",
+        "Up to 90% LTV for first-time buyers",
+        "Apply directly or via broker",
+        "Competitive 2-year fixed rates"
+      ],
+      "cons": [
+        "Green mortgage rates not as competitive",
+        "Rates higher than Avant or Haven"
+      ],
+      "cashback_available": true,
+      "rates": [
+        {
+          "id": "ptsb-f2-90",
+          "type": "fixed",
+          "term_years": 2,
+          "ltv_max": 90,
+          "rate": 3.8,
+          "aprc": 3.87,
+          "green": false,
+          "cashback": 2000,
+          "notes": "FTB up to 90% LTV"
+        },
+        {
+          "id": "ptsb-f3-80",
+          "type": "fixed",
+          "term_years": 3,
+          "ltv_max": 80,
+          "rate": 3.75,
+          "aprc": 3.82,
+          "green": false,
+          "cashback": 2000,
+          "notes": ""
+        },
+        {
+          "id": "ptsb-f5-80",
+          "type": "fixed",
+          "term_years": 5,
+          "ltv_max": 80,
+          "rate": 3.85,
+          "aprc": 3.92,
+          "green": false,
+          "cashback": 2000,
+          "notes": ""
+        },
+        {
+          "id": "ptsb-f7-80",
+          "type": "fixed",
+          "term_years": 7,
+          "ltv_max": 80,
+          "rate": 4.0,
+          "aprc": 4.08,
+          "green": false,
+          "cashback": 2000,
+          "notes": ""
+        },
+        {
+          "id": "ptsb-v-80",
+          "type": "variable",
+          "term_years": null,
+          "ltv_max": 80,
+          "rate": 4.15,
+          "aprc": 4.23,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "ptsb-g5-80",
+          "type": "fixed",
+          "term_years": 5,
+          "ltv_max": 80,
+          "rate": 3.6,
+          "aprc": 3.67,
+          "green": true,
+          "cashback": 2000,
+          "notes": "BER A or B required"
+        }
+      ]
+    },
+    {
+      "id": "ebs",
+      "name": "EBS",
+      "initials": "EBS",
+      "color": "#007B40",
+      "url": "https://www.ebs.ie/mortgages",
+      "affiliate_url": "https://www.ebs.ie/mortgages",
+      "about": "EBS (Educational Building Society) is owned by AIB Group and operates as a separate mortgage brand. They are a direct-only lender focused on straightforward mortgage products, particularly popular with first-time buyers.",
+      "pros": [
+        "Part of AIB Group \u2014 strong backing",
+        "Apply directly \u2014 no broker needed",
+        "Simple product range \u2014 easy to compare",
+        "Competitive short-term fixed rates"
+      ],
+      "cons": [
+        "Limited product range",
+        "No green mortgage discount",
+        "Branch network smaller than main banks"
+      ],
+      "cashback_available": false,
+      "rates": [
+        {
+          "id": "ebs-f2-90",
+          "type": "fixed",
+          "term_years": 2,
+          "ltv_max": 90,
+          "rate": 3.85,
+          "aprc": 3.92,
+          "green": false,
+          "cashback": null,
+          "notes": "FTB eligible"
+        },
+        {
+          "id": "ebs-f3-80",
+          "type": "fixed",
+          "term_years": 3,
+          "ltv_max": 80,
+          "rate": 3.8,
+          "aprc": 3.87,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "ebs-f5-80",
+          "type": "fixed",
+          "term_years": 5,
+          "ltv_max": 80,
+          "rate": 3.95,
+          "aprc": 4.02,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "ebs-v-90",
+          "type": "variable",
+          "term_years": null,
+          "ltv_max": 90,
+          "rate": 4.2,
+          "aprc": 4.28,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "id": "ics",
+      "name": "ICS Mortgages",
+      "initials": "ICS",
+      "color": "#4A2880",
+      "url": "https://www.icsmortgages.ie",
+      "affiliate_url": "https://www.icsmortgages.ie",
+      "about": "ICS Mortgages (Irish Civil Service Building Society) is a broker-only non-bank lender backed by Dilosk. They specialise in longer fixed terms and are particularly competitive for buyers with lower LTVs who want rate certainty over a longer period.",
+      "pros": [
+        "Competitive longer fixed terms (7\u201330 years)",
+        "Good for lower LTV borrowers",
+        "Rate certainty with 10\u201320 year fixes available",
+        "Flexible criteria for self-employed"
+      ],
+      "cons": [
+        "Broker-only",
+        "Not as competitive on short-term rates",
+        "No cashback"
+      ],
+      "cashback_available": false,
+      "rates": [
+        {
+          "id": "ics-f3-75",
+          "type": "fixed",
+          "term_years": 3,
+          "ltv_max": 75,
+          "rate": 3.55,
+          "aprc": 3.62,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "ics-f5-75",
+          "type": "fixed",
+          "term_years": 5,
+          "ltv_max": 75,
+          "rate": 3.6,
+          "aprc": 3.67,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "ics-f7-75",
+          "type": "fixed",
+          "term_years": 7,
+          "ltv_max": 75,
+          "rate": 3.7,
+          "aprc": 3.77,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "ics-f10-75",
+          "type": "fixed",
+          "term_years": 10,
+          "ltv_max": 75,
+          "rate": 3.8,
+          "aprc": 3.88,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "ics-f20-75",
+          "type": "fixed",
+          "term_years": 20,
+          "ltv_max": 75,
+          "rate": 4.1,
+          "aprc": 4.19,
+          "green": false,
+          "cashback": null,
+          "notes": "Long-term certainty"
+        },
+        {
+          "id": "ics-g5-75",
+          "type": "fixed",
+          "term_years": 5,
+          "ltv_max": 75,
+          "rate": 3.4,
+          "aprc": 3.47,
+          "green": true,
+          "cashback": null,
+          "notes": "BER A or B"
+        }
+      ]
+    },
+    {
+      "id": "finance-ireland",
+      "name": "Finance Ireland",
+      "initials": "FI",
+      "color": "#C25A00",
+      "url": "https://www.financeireland.ie/products/residential-mortgages/overview/",
+      "affiliate_url": "https://www.financeireland.ie/products/residential-mortgages/overview/",
+      "about": "Finance Ireland is a non-bank lender offering residential and buy-to-let mortgages. They are broker-only and are particularly known for their green mortgage product and flexible criteria for non-standard borrowers.",
+      "pros": [
+        "Competitive green mortgage rates",
+        "Flexible criteria for self-employed and contractors",
+        "Available through major brokers",
+        "Buy-to-let options available"
+      ],
+      "cons": [
+        "Broker-only",
+        "Less brand recognition",
+        "No cashback"
+      ],
+      "cashback_available": false,
+      "rates": [
+        {
+          "id": "fi-f3-80",
+          "type": "fixed",
+          "term_years": 3,
+          "ltv_max": 80,
+          "rate": 3.7,
+          "aprc": 3.77,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "fi-f5-80",
+          "type": "fixed",
+          "term_years": 5,
+          "ltv_max": 80,
+          "rate": 3.8,
+          "aprc": 3.87,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "fi-f7-80",
+          "type": "fixed",
+          "term_years": 7,
+          "ltv_max": 80,
+          "rate": 3.9,
+          "aprc": 3.97,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "fi-g3-80",
+          "type": "fixed",
+          "term_years": 3,
+          "ltv_max": 80,
+          "rate": 3.45,
+          "aprc": 3.52,
+          "green": true,
+          "cashback": null,
+          "notes": "BER A or B required"
+        },
+        {
+          "id": "fi-g5-80",
+          "type": "fixed",
+          "term_years": 5,
+          "ltv_max": 80,
+          "rate": 3.55,
+          "aprc": 3.62,
+          "green": true,
+          "cashback": null,
+          "notes": "BER A or B required"
+        }
+      ]
+    }
+  ]
+}
