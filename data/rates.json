@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-18T11:10:34Z",
+  "last_updated": "2026-05-18T15:36:23Z",
   "source_note": "Rates aggregated from lender websites. For indicative purposes only. Verify directly with lender.",
   "ecb_rate": 2.4,
   "lenders": [
@@ -10,7 +10,7 @@
       "color": "#E63946",
       "url": "https://www.avantmoney.ie/mortgages",
       "affiliate_url": "https://www.avantmoney.ie/mortgages",
-      "about": "Avant Money is a Spanish-owned (Bankinter) non-bank lender that entered the Irish market in 2020. They are consistently among the lowest-rate providers in Ireland due to their low-cost funding model.",
+      "about": "Avant Money is a Spanish-owned (Bankinter) non-bank lender available exclusively through brokers. They offer three mortgage types: Fixed Term (standard fixed rates), Flex Mortgage (Euribor-linked variable updated monthly), and the unique One Mortgage \u2014 a rate fixed for the full mortgage term of up to 30 years.",
       "pros": [
         "Consistently lowest fixed rates in Ireland",
         "Available via broker only \u2014 not direct",
@@ -25,6 +25,83 @@
       "cashback_available": false,
       "rates": [
         {
+          "id": "av-flex-80",
+          "type": "variable",
+          "term_years": null,
+          "ltv_max": 80,
+          "rate": 3.6,
+          "aprc": 3.68,
+          "green": false,
+          "cashback": null,
+          "notes": "Euribor-linked, updates monthly. Rate 10 May\u20139 Jun 2026."
+        },
+        {
+          "id": "av-flex-90",
+          "type": "variable",
+          "term_years": null,
+          "ltv_max": 90,
+          "rate": 3.8,
+          "aprc": 3.88,
+          "green": false,
+          "cashback": null,
+          "notes": "Euribor-linked, updates monthly. Rate 10 May\u20139 Jun 2026."
+        },
+        {
+          "id": "av-one-80",
+          "type": "fixed",
+          "term_years": 30,
+          "ltv_max": 80,
+          "rate": 3.4,
+          "aprc": 3.47,
+          "green": false,
+          "cashback": null,
+          "notes": "Fixed for full mortgage term \u2014 up to 30 years"
+        },
+        {
+          "id": "av-one-90",
+          "type": "fixed",
+          "term_years": 30,
+          "ltv_max": 90,
+          "rate": 3.8,
+          "aprc": 3.88,
+          "green": false,
+          "cashback": null,
+          "notes": "Fixed for full mortgage term \u2014 up to 30 years"
+        },
+        {
+          "id": "av-hvm4-60",
+          "type": "fixed",
+          "term_years": 4,
+          "ltv_max": 60,
+          "rate": 3.2,
+          "aprc": 3.62,
+          "green": false,
+          "cashback": null,
+          "notes": "High Value Mortgage \u2014 loan >=\u20ac300k"
+        },
+        {
+          "id": "av-hvm4-80",
+          "type": "fixed",
+          "term_years": 4,
+          "ltv_max": 80,
+          "rate": 3.3,
+          "aprc": 3.78,
+          "green": false,
+          "cashback": null,
+          "notes": "High Value Mortgage \u2014 loan >=\u20ac300k"
+        },
+        {
+          "id": "av-hvm4-90",
+          "type": "fixed",
+          "term_years": 4,
+          "ltv_max": 90,
+          "rate": 3.6,
+          "aprc": 3.9,
+          "green": false,
+          "cashback": null,
+          "notes": "High Value Mortgage \u2014 loan >=\u20ac300k"
+        },
+        {
           "id": "av-f3-80",
           "type": "fixed",
           "term_years": 3,
@@ -36,15 +113,26 @@
           "notes": ""
         },
         {
+          "id": "av-f3-90",
+          "type": "fixed",
+          "term_years": 3,
+          "ltv_max": 90,
+          "rate": 3.7,
+          "aprc": 3.97,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
           "id": "av-f4-80",
           "type": "fixed",
           "term_years": 4,
           "ltv_max": 80,
           "rate": 3.4,
-          "aprc": 3.7,
+          "aprc": 3.82,
           "green": false,
           "cashback": null,
-          "notes": "Best Avant rate"
+          "notes": ""
         },
         {
           "id": "av-f4-90",
@@ -63,7 +151,18 @@
           "term_years": 5,
           "ltv_max": 80,
           "rate": 3.45,
-          "aprc": 3.52,
+          "aprc": 3.8,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "av-f5-90",
+          "type": "fixed",
+          "term_years": 5,
+          "ltv_max": 90,
+          "rate": 3.7,
+          "aprc": 3.92,
           "green": false,
           "cashback": null,
           "notes": ""
@@ -73,8 +172,19 @@
           "type": "fixed",
           "term_years": 7,
           "ltv_max": 80,
-          "rate": 3.55,
-          "aprc": 3.62,
+          "rate": 3.8,
+          "aprc": 3.95,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "av-f7-90",
+          "type": "fixed",
+          "term_years": 7,
+          "ltv_max": 90,
+          "rate": 3.95,
+          "aprc": 4.05,
           "green": false,
           "cashback": null,
           "notes": ""
@@ -84,22 +194,22 @@
           "type": "fixed",
           "term_years": 10,
           "ltv_max": 80,
-          "rate": 3.65,
-          "aprc": 3.73,
+          "rate": 3.8,
+          "aprc": 3.92,
           "green": false,
           "cashback": null,
           "notes": ""
         },
         {
-          "id": "av-g5-80",
+          "id": "av-f10-90",
           "type": "fixed",
-          "term_years": 5,
-          "ltv_max": 80,
-          "rate": 3.25,
-          "aprc": 3.32,
-          "green": true,
+          "term_years": 10,
+          "ltv_max": 90,
+          "rate": 3.95,
+          "aprc": 4.05,
+          "green": false,
           "cashback": null,
-          "notes": "BER A or B required"
+          "notes": ""
         }
       ]
     },
@@ -110,7 +220,7 @@
       "color": "#1A4F8A",
       "url": "https://www.havenmortgages.ie/",
       "affiliate_url": "https://www.havenmortgages.ie/",
-      "about": "Haven Mortgages is a subsidiary of AIB Group, available exclusively through mortgage brokers. They typically offer slightly sharper rates than AIB direct, particularly on green and longer fixed terms.",
+      "about": "Haven Mortgages is an AIB Group subsidiary available exclusively through brokers. Their Green 4-year fixed at 3.20% is one of the best green rates in the Irish market. Variable rates are LTV-banded \u2014 the lower your LTV, the lower your rate.",
       "pros": [
         "AIB-backed \u2014 strong credit rating",
         "Competitive green mortgage rates",
@@ -124,12 +234,56 @@
       "cashback_available": false,
       "rates": [
         {
-          "id": "hvn-f3-60",
+          "id": "hvn-v-50",
+          "type": "variable",
+          "term_years": null,
+          "ltv_max": 50,
+          "rate": 3.75,
+          "aprc": 3.9,
+          "green": false,
+          "cashback": null,
+          "notes": "LTV <=50%"
+        },
+        {
+          "id": "hvn-v-80",
+          "type": "variable",
+          "term_years": null,
+          "ltv_max": 80,
+          "rate": 3.95,
+          "aprc": 4.1,
+          "green": false,
+          "cashback": null,
+          "notes": "LTV >50% <=80%"
+        },
+        {
+          "id": "hvn-v-90",
+          "type": "variable",
+          "term_years": null,
+          "ltv_max": 90,
+          "rate": 4.15,
+          "aprc": 4.3,
+          "green": false,
+          "cashback": null,
+          "notes": "LTV >80%"
+        },
+        {
+          "id": "hvn-f1-80",
           "type": "fixed",
-          "term_years": 3,
-          "ltv_max": 60,
-          "rate": 3.35,
-          "aprc": 3.41,
+          "term_years": 1,
+          "ltv_max": 80,
+          "rate": 3.55,
+          "aprc": 4.2,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "hvn-f2-80",
+          "type": "fixed",
+          "term_years": 2,
+          "ltv_max": 80,
+          "rate": 3.6,
+          "aprc": 4.2,
           "green": false,
           "cashback": null,
           "notes": ""
@@ -139,8 +293,8 @@
           "type": "fixed",
           "term_years": 3,
           "ltv_max": 80,
-          "rate": 3.5,
-          "aprc": 3.57,
+          "rate": 3.75,
+          "aprc": 4.2,
           "green": false,
           "cashback": null,
           "notes": ""
@@ -150,8 +304,8 @@
           "type": "fixed",
           "term_years": 5,
           "ltv_max": 80,
-          "rate": 3.65,
-          "aprc": 3.72,
+          "rate": 3.9,
+          "aprc": 4.2,
           "green": false,
           "cashback": null,
           "notes": ""
@@ -161,8 +315,8 @@
           "type": "fixed",
           "term_years": 7,
           "ltv_max": 80,
-          "rate": 3.75,
-          "aprc": 3.82,
+          "rate": 4.1,
+          "aprc": 4.3,
           "green": false,
           "cashback": null,
           "notes": ""
@@ -172,33 +326,22 @@
           "type": "fixed",
           "term_years": 10,
           "ltv_max": 80,
-          "rate": 3.85,
-          "aprc": 3.93,
+          "rate": 4.25,
+          "aprc": 4.4,
           "green": false,
           "cashback": null,
           "notes": ""
         },
         {
-          "id": "hvn-g3-80",
+          "id": "hvn-g4-80",
           "type": "fixed",
-          "term_years": 3,
+          "term_years": 4,
           "ltv_max": 80,
-          "rate": 3.3,
-          "aprc": 3.37,
+          "rate": 3.2,
+          "aprc": 3.9,
           "green": true,
           "cashback": null,
-          "notes": "BER A or B"
-        },
-        {
-          "id": "hvn-g5-80",
-          "type": "fixed",
-          "term_years": 5,
-          "ltv_max": 80,
-          "rate": 3.4,
-          "aprc": 3.47,
-          "green": true,
-          "cashback": null,
-          "notes": "BER A or B"
+          "notes": "Haven Green \u2014 BER A or B required"
         }
       ]
     },
@@ -209,7 +352,7 @@
       "color": "#005F2F",
       "url": "https://www.aib.ie/mortgages",
       "affiliate_url": "https://www.aib.ie/mortgages",
-      "about": "Allied Irish Banks (AIB) is one of Ireland's two pillar banks and a major mortgage lender. As a direct lender you can apply online, in branch, or through a broker. AIB offers a strong green mortgage product for energy-efficient homes.",
+      "about": "Allied Irish Banks (AIB) is one of Ireland's two pillar banks. Apply directly online, in branch or through a broker. AIB offers competitive green rates \u2014 their GreenA 3-year fixed at 3.00% (\u226450% LTV) requires BER A1-A3. Standard green rates (2yr and 5yr) accept BER A1-B3. Switchers borrowing \u2265\u20ac250k can access the Higher Value 4yr rate plus a \u20ac3,000 cashback.",
       "pros": [
         "Apply directly \u2014 no broker needed",
         "Strong green mortgage offering",
@@ -223,23 +366,177 @@
       "cashback_available": false,
       "rates": [
         {
+          "id": "aib-v-50",
+          "type": "variable",
+          "term_years": null,
+          "ltv_max": 50,
+          "rate": 3.75,
+          "aprc": 3.84,
+          "green": false,
+          "cashback": null,
+          "notes": "LTV <=50%"
+        },
+        {
+          "id": "aib-v-80",
+          "type": "variable",
+          "term_years": null,
+          "ltv_max": 80,
+          "rate": 3.95,
+          "aprc": 4.04,
+          "green": false,
+          "cashback": null,
+          "notes": "LTV >50% <=80%"
+        },
+        {
+          "id": "aib-v-90",
+          "type": "variable",
+          "term_years": null,
+          "ltv_max": 90,
+          "rate": 4.15,
+          "aprc": 4.25,
+          "green": false,
+          "cashback": null,
+          "notes": "LTV >80%"
+        },
+        {
+          "id": "aib-f1-50",
+          "type": "fixed",
+          "term_years": 1,
+          "ltv_max": 50,
+          "rate": 3.3,
+          "aprc": 3.79,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "aib-f1-80",
+          "type": "fixed",
+          "term_years": 1,
+          "ltv_max": 80,
+          "rate": 3.4,
+          "aprc": 3.98,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "aib-f1-90",
+          "type": "fixed",
+          "term_years": 1,
+          "ltv_max": 90,
+          "rate": 3.5,
+          "aprc": 4.18,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "aib-f2-50",
+          "type": "fixed",
+          "term_years": 2,
+          "ltv_max": 50,
+          "rate": 3.35,
+          "aprc": 3.75,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "aib-f2-80",
+          "type": "fixed",
+          "term_years": 2,
+          "ltv_max": 80,
+          "rate": 3.45,
+          "aprc": 3.93,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
           "id": "aib-f2-90",
           "type": "fixed",
           "term_years": 2,
           "ltv_max": 90,
-          "rate": 3.75,
-          "aprc": 3.82,
+          "rate": 3.55,
+          "aprc": 4.12,
           "green": false,
           "cashback": null,
-          "notes": "First-time buyer"
+          "notes": ""
+        },
+        {
+          "id": "aib-f3-50",
+          "type": "fixed",
+          "term_years": 3,
+          "ltv_max": 50,
+          "rate": 3.5,
+          "aprc": 3.76,
+          "green": false,
+          "cashback": null,
+          "notes": ""
         },
         {
           "id": "aib-f3-80",
           "type": "fixed",
           "term_years": 3,
           "ltv_max": 80,
+          "rate": 3.6,
+          "aprc": 3.93,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "aib-f3-90",
+          "type": "fixed",
+          "term_years": 3,
+          "ltv_max": 90,
+          "rate": 3.7,
+          "aprc": 4.11,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "aib-f4-50",
+          "type": "fixed",
+          "term_years": 4,
+          "ltv_max": 50,
+          "rate": 3.55,
+          "aprc": 3.76,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "aib-f4-80",
+          "type": "fixed",
+          "term_years": 4,
+          "ltv_max": 80,
           "rate": 3.65,
-          "aprc": 3.72,
+          "aprc": 3.92,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "aib-f4-90",
+          "type": "fixed",
+          "term_years": 4,
+          "ltv_max": 90,
+          "rate": 3.75,
+          "aprc": 4.09,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "aib-f5-50",
+          "type": "fixed",
+          "term_years": 5,
+          "ltv_max": 50,
+          "rate": 3.65,
+          "aprc": 3.79,
           "green": false,
           "cashback": null,
           "notes": ""
@@ -249,8 +546,30 @@
           "type": "fixed",
           "term_years": 5,
           "ltv_max": 80,
-          "rate": 3.8,
-          "aprc": 3.87,
+          "rate": 3.75,
+          "aprc": 3.95,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "aib-f5-90",
+          "type": "fixed",
+          "term_years": 5,
+          "ltv_max": 90,
+          "rate": 3.85,
+          "aprc": 4.1,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "aib-f7-50",
+          "type": "fixed",
+          "term_years": 7,
+          "ltv_max": 50,
+          "rate": 3.85,
+          "aprc": 3.9,
           "green": false,
           "cashback": null,
           "notes": ""
@@ -261,7 +580,29 @@
           "term_years": 7,
           "ltv_max": 80,
           "rate": 3.95,
-          "aprc": 4.03,
+          "aprc": 4.04,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "aib-f7-90",
+          "type": "fixed",
+          "term_years": 7,
+          "ltv_max": 90,
+          "rate": 4.05,
+          "aprc": 4.19,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "aib-f10-50",
+          "type": "fixed",
+          "term_years": 10,
+          "ltv_max": 50,
+          "rate": 4.0,
+          "aprc": 4.04,
           "green": false,
           "cashback": null,
           "notes": ""
@@ -271,44 +612,154 @@
           "type": "fixed",
           "term_years": 10,
           "ltv_max": 80,
-          "rate": 4.05,
-          "aprc": 4.13,
-          "green": false,
-          "cashback": null,
-          "notes": ""
-        },
-        {
-          "id": "aib-v-80",
-          "type": "variable",
-          "term_years": null,
-          "ltv_max": 80,
           "rate": 4.1,
-          "aprc": 4.18,
+          "aprc": 4.17,
           "green": false,
           "cashback": null,
           "notes": ""
         },
         {
-          "id": "aib-g3-80",
+          "id": "aib-f10-90",
+          "type": "fixed",
+          "term_years": 10,
+          "ltv_max": 90,
+          "rate": 4.2,
+          "aprc": 4.29,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "aib-g2-50",
+          "type": "fixed",
+          "term_years": 2,
+          "ltv_max": 50,
+          "rate": 3.15,
+          "aprc": 3.71,
+          "green": true,
+          "cashback": null,
+          "notes": "BER A1\u2013B3 required"
+        },
+        {
+          "id": "aib-g2-80",
+          "type": "fixed",
+          "term_years": 2,
+          "ltv_max": 80,
+          "rate": 3.25,
+          "aprc": 3.89,
+          "green": true,
+          "cashback": null,
+          "notes": "BER A1\u2013B3 required"
+        },
+        {
+          "id": "aib-g2-90",
+          "type": "fixed",
+          "term_years": 2,
+          "ltv_max": 90,
+          "rate": 3.35,
+          "aprc": 4.07,
+          "green": true,
+          "cashback": null,
+          "notes": "BER A1\u2013B3 required"
+        },
+        {
+          "id": "aib-ga3-50",
+          "type": "fixed",
+          "term_years": 3,
+          "ltv_max": 50,
+          "rate": 3.0,
+          "aprc": 3.6,
+          "green": true,
+          "cashback": null,
+          "notes": "BER A1\u2013A3 only"
+        },
+        {
+          "id": "aib-ga3-80",
           "type": "fixed",
           "term_years": 3,
           "ltv_max": 80,
-          "rate": 3.45,
-          "aprc": 3.52,
+          "rate": 3.1,
+          "aprc": 3.78,
           "green": true,
           "cashback": null,
-          "notes": "BER A or B required"
+          "notes": "BER A1\u2013A3 only"
+        },
+        {
+          "id": "aib-ga3-90",
+          "type": "fixed",
+          "term_years": 3,
+          "ltv_max": 90,
+          "rate": 3.2,
+          "aprc": 3.95,
+          "green": true,
+          "cashback": null,
+          "notes": "BER A1\u2013A3 only"
+        },
+        {
+          "id": "aib-g5-50",
+          "type": "fixed",
+          "term_years": 5,
+          "ltv_max": 50,
+          "rate": 3.2,
+          "aprc": 3.57,
+          "green": true,
+          "cashback": null,
+          "notes": "BER A1\u2013B3 required"
         },
         {
           "id": "aib-g5-80",
           "type": "fixed",
           "term_years": 5,
           "ltv_max": 80,
-          "rate": 3.55,
-          "aprc": 3.62,
+          "rate": 3.3,
+          "aprc": 3.73,
           "green": true,
           "cashback": null,
-          "notes": "BER A or B required"
+          "notes": "BER A1\u2013B3 required"
+        },
+        {
+          "id": "aib-g5-90",
+          "type": "fixed",
+          "term_years": 5,
+          "ltv_max": 90,
+          "rate": 3.4,
+          "aprc": 3.88,
+          "green": true,
+          "cashback": null,
+          "notes": "BER A1\u2013B3 required"
+        },
+        {
+          "id": "aib-hv4-50",
+          "type": "fixed",
+          "term_years": 4,
+          "ltv_max": 50,
+          "rate": 3.4,
+          "aprc": 3.7,
+          "green": false,
+          "cashback": null,
+          "notes": "Loan >=\u20ac250k. Switchers get \u20ac3,000 cashback."
+        },
+        {
+          "id": "aib-hv4-80",
+          "type": "fixed",
+          "term_years": 4,
+          "ltv_max": 80,
+          "rate": 3.5,
+          "aprc": 3.86,
+          "green": false,
+          "cashback": null,
+          "notes": "Loan >=\u20ac250k. Switchers get \u20ac3,000 cashback."
+        },
+        {
+          "id": "aib-hv4-90",
+          "type": "fixed",
+          "term_years": 4,
+          "ltv_max": 90,
+          "rate": 3.6,
+          "aprc": 4.03,
+          "green": false,
+          "cashback": null,
+          "notes": "Loan >=\u20ac250k. Switchers get \u20ac3,000 cashback."
         }
       ]
     },
@@ -319,7 +770,7 @@
       "color": "#002F6C",
       "url": "https://www.bankofireland.com/mortgages",
       "affiliate_url": "https://www.bankofireland.com/mortgages",
-      "about": "Bank of Ireland is Ireland's largest bank by assets and one of the two pillar banks. They offer a cashback incentive on most mortgage products, which can be attractive for buyers who need cash for fit-out or moving costs.",
+      "about": "Bank of Ireland is one of Ireland's two pillar banks. Their Home Value Mortgage (HVM) products offer BER-linked rates \u2014 the better your BER, the lower the rate. Their Cashback Plus offer gives 3% back (2% on drawdown, 1% after 5 years) on qualifying fixed rates \u2014 worth \u20ac9,000 on a \u20ac300k mortgage. Note: cashback is NOT available on HVM rates. Last verified: November 2025.",
       "pros": [
         "\u20ac2,000 cashback on most products",
         "Apply directly online or in branch",
@@ -333,81 +784,136 @@
       "cashback_available": true,
       "rates": [
         {
+          "id": "boi-hvm1-a",
+          "type": "fixed",
+          "term_years": 1,
+          "ltv_max": 90,
+          "rate": 3.3,
+          "aprc": 4.2,
+          "green": true,
+          "cashback": null,
+          "notes": "BER A required \u00b7 Cashback Plus: 3% (2% drawdown + 1% after 5yrs)"
+        },
+        {
+          "id": "boi-hvm4-a",
+          "type": "fixed",
+          "term_years": 4,
+          "ltv_max": 90,
+          "rate": 3.1,
+          "aprc": 3.8,
+          "green": true,
+          "cashback": null,
+          "notes": "BER A required \u2014 best BOI rate \u00b7 Cashback Plus: 3% (2% drawdown + 1% after 5yrs)"
+        },
+        {
+          "id": "boi-hvm5-a",
+          "type": "fixed",
+          "term_years": 5,
+          "ltv_max": 90,
+          "rate": 3.4,
+          "aprc": 3.9,
+          "green": true,
+          "cashback": null,
+          "notes": "BER A required \u00b7 Cashback Plus: 3% (2% drawdown + 1% after 5yrs)"
+        },
+        {
+          "id": "boi-hvm7-a",
+          "type": "fixed",
+          "term_years": 7,
+          "ltv_max": 90,
+          "rate": 3.45,
+          "aprc": 3.8,
+          "green": true,
+          "cashback": null,
+          "notes": "BER A required \u00b7 Cashback Plus: 3% (2% drawdown + 1% after 5yrs)"
+        },
+        {
+          "id": "boi-f1-90",
+          "type": "fixed",
+          "term_years": 1,
+          "ltv_max": 90,
+          "rate": 3.65,
+          "aprc": 4.2,
+          "green": false,
+          "cashback": null,
+          "notes": "Cashback Plus: 3% (2% drawdown + 1% after 5yrs)"
+        },
+        {
           "id": "boi-f2-90",
           "type": "fixed",
           "term_years": 2,
           "ltv_max": 90,
-          "rate": 3.8,
-          "aprc": 3.87,
+          "rate": 4.15,
+          "aprc": 4.3,
           "green": false,
-          "cashback": 2000,
-          "notes": ""
+          "cashback": null,
+          "notes": "Cashback Plus: 3% (2% drawdown + 1% after 5yrs)"
         },
         {
-          "id": "boi-f3-80",
+          "id": "boi-f3-90",
           "type": "fixed",
           "term_years": 3,
-          "ltv_max": 80,
-          "rate": 3.75,
-          "aprc": 3.82,
+          "ltv_max": 90,
+          "rate": 4.25,
+          "aprc": 4.4,
           "green": false,
-          "cashback": 2000,
-          "notes": ""
+          "cashback": null,
+          "notes": "Cashback Plus: 3% (2% drawdown + 1% after 5yrs)"
         },
         {
-          "id": "boi-f5-80",
+          "id": "boi-f4-90",
+          "type": "fixed",
+          "term_years": 4,
+          "ltv_max": 90,
+          "rate": 3.45,
+          "aprc": 4.0,
+          "green": false,
+          "cashback": null,
+          "notes": "HVM BER Exempt \u00b7 Cashback Plus: 3% (2% drawdown + 1% after 5yrs)"
+        },
+        {
+          "id": "boi-f5-90",
           "type": "fixed",
           "term_years": 5,
-          "ltv_max": 80,
-          "rate": 3.9,
-          "aprc": 3.97,
+          "ltv_max": 90,
+          "rate": 3.75,
+          "aprc": 4.1,
           "green": false,
-          "cashback": 2000,
-          "notes": ""
+          "cashback": null,
+          "notes": "HVM BER Exempt \u00b7 Cashback Plus: 3% (2% drawdown + 1% after 5yrs)"
         },
         {
-          "id": "boi-f7-80",
+          "id": "boi-f7-90",
           "type": "fixed",
           "term_years": 7,
-          "ltv_max": 80,
-          "rate": 4.05,
-          "aprc": 4.13,
+          "ltv_max": 90,
+          "rate": 3.8,
+          "aprc": 4.0,
           "green": false,
-          "cashback": 2000,
-          "notes": ""
+          "cashback": null,
+          "notes": "HVM BER Exempt \u00b7 Cashback Plus: 3% (2% drawdown + 1% after 5yrs)"
         },
         {
-          "id": "boi-f10-80",
+          "id": "boi-f10-90",
           "type": "fixed",
           "term_years": 10,
-          "ltv_max": 80,
-          "rate": 4.15,
-          "aprc": 4.24,
+          "ltv_max": 90,
+          "rate": 4.55,
+          "aprc": 4.7,
           "green": false,
-          "cashback": 2000,
-          "notes": ""
+          "cashback": null,
+          "notes": "Cashback Plus: 3% (2% drawdown + 1% after 5yrs)"
         },
         {
-          "id": "boi-v-80",
+          "id": "boi-v-90",
           "type": "variable",
           "term_years": null,
-          "ltv_max": 80,
-          "rate": 4.2,
-          "aprc": 4.28,
+          "ltv_max": 90,
+          "rate": 4.15,
+          "aprc": 4.3,
           "green": false,
-          "cashback": 2000,
-          "notes": ""
-        },
-        {
-          "id": "boi-g5-80",
-          "type": "fixed",
-          "term_years": 5,
-          "ltv_max": 80,
-          "rate": 3.65,
-          "aprc": 3.72,
-          "green": true,
-          "cashback": 2000,
-          "notes": "BER A or B required"
+          "cashback": null,
+          "notes": "Cashback Plus: 3% (2% drawdown + 1% after 5yrs)"
         }
       ]
     },
@@ -418,7 +924,7 @@
       "color": "#9B1D20",
       "url": "https://www.permanenttsb.ie/mortgages",
       "affiliate_url": "https://www.permanenttsb.ie/mortgages",
-      "about": "Permanent TSB (PTSB) is Ireland's third-largest bank and a major mortgage lender. They offer competitive cashback deals and are often the most accessible lender for first-time buyers with smaller deposits.",
+      "about": "Permanent TSB is one of Ireland's main retail banks. They offer a 2% cashback on most mortgage products at drawdown \u2014 on a \u20ac300k mortgage that's \u20ac6,000 back. Note: cashback does not apply to the 4-year fixed rate.",
       "pros": [
         "\u20ac2,000\u2013\u20ac3,000 cashback available",
         "Up to 90% LTV for first-time buyers",
@@ -432,15 +938,169 @@
       "cashback_available": true,
       "rates": [
         {
-          "id": "ptsb-f2-90",
+          "id": "ptsb-f4-60",
           "type": "fixed",
-          "term_years": 2,
-          "ltv_max": 90,
-          "rate": 3.8,
-          "aprc": 3.87,
+          "term_years": 4,
+          "ltv_max": 60,
+          "rate": 3.0,
+          "aprc": 3.96,
           "green": false,
-          "cashback": 2000,
-          "notes": "FTB up to 90% LTV"
+          "cashback": null,
+          "notes": "No cashback on 4yr fixed"
+        },
+        {
+          "id": "ptsb-f4-80",
+          "type": "fixed",
+          "term_years": 4,
+          "ltv_max": 80,
+          "rate": 3.25,
+          "aprc": 4.12,
+          "green": false,
+          "cashback": null,
+          "notes": "No cashback on 4yr fixed"
+        },
+        {
+          "id": "ptsb-f4-90",
+          "type": "fixed",
+          "term_years": 4,
+          "ltv_max": 90,
+          "rate": 3.5,
+          "aprc": 4.35,
+          "green": false,
+          "cashback": null,
+          "notes": "No cashback on 4yr fixed"
+        },
+        {
+          "id": "ptsb-g5-60",
+          "type": "fixed",
+          "term_years": 5,
+          "ltv_max": 60,
+          "rate": 3.25,
+          "aprc": 3.96,
+          "green": true,
+          "cashback": null,
+          "notes": "BER A\u2013B3 required. Loans >=\u20ac250k"
+        },
+        {
+          "id": "ptsb-g5-80",
+          "type": "fixed",
+          "term_years": 5,
+          "ltv_max": 80,
+          "rate": 3.35,
+          "aprc": 4.07,
+          "green": true,
+          "cashback": null,
+          "notes": "BER A\u2013B3 required. Loans >=\u20ac250k"
+        },
+        {
+          "id": "ptsb-g5-90",
+          "type": "fixed",
+          "term_years": 5,
+          "ltv_max": 90,
+          "rate": 3.5,
+          "aprc": 4.25,
+          "green": true,
+          "cashback": null,
+          "notes": "BER A\u2013B3 required. Loans >=\u20ac250k"
+        },
+        {
+          "id": "ptsb-g3-60",
+          "type": "fixed",
+          "term_years": 3,
+          "ltv_max": 60,
+          "rate": 3.35,
+          "aprc": 4.19,
+          "green": true,
+          "cashback": null,
+          "notes": "BER A\u2013B3 required. Loans >=\u20ac250k"
+        },
+        {
+          "id": "ptsb-g3-80",
+          "type": "fixed",
+          "term_years": 3,
+          "ltv_max": 80,
+          "rate": 3.45,
+          "aprc": 4.22,
+          "green": true,
+          "cashback": null,
+          "notes": "BER A\u2013B3 required"
+        },
+        {
+          "id": "ptsb-f7-60",
+          "type": "fixed",
+          "term_years": 7,
+          "ltv_max": 60,
+          "rate": 3.35,
+          "aprc": 3.86,
+          "green": false,
+          "cashback": null,
+          "notes": "2% cashback at drawdown"
+        },
+        {
+          "id": "ptsb-f7-80",
+          "type": "fixed",
+          "term_years": 7,
+          "ltv_max": 80,
+          "rate": 3.45,
+          "aprc": 3.96,
+          "green": false,
+          "cashback": null,
+          "notes": "2% cashback at drawdown"
+        },
+        {
+          "id": "ptsb-f7-90",
+          "type": "fixed",
+          "term_years": 7,
+          "ltv_max": 90,
+          "rate": 3.6,
+          "aprc": 4.14,
+          "green": false,
+          "cashback": null,
+          "notes": "2% cashback at drawdown"
+        },
+        {
+          "id": "ptsb-f5-60",
+          "type": "fixed",
+          "term_years": 5,
+          "ltv_max": 60,
+          "rate": 3.5,
+          "aprc": 4.08,
+          "green": false,
+          "cashback": null,
+          "notes": "2% cashback at drawdown"
+        },
+        {
+          "id": "ptsb-f5-80",
+          "type": "fixed",
+          "term_years": 5,
+          "ltv_max": 80,
+          "rate": 3.6,
+          "aprc": 4.19,
+          "green": false,
+          "cashback": null,
+          "notes": "2% cashback at drawdown"
+        },
+        {
+          "id": "ptsb-f5-90",
+          "type": "fixed",
+          "term_years": 5,
+          "ltv_max": 90,
+          "rate": 3.75,
+          "aprc": 4.37,
+          "green": false,
+          "cashback": null,
+          "notes": "2% cashback at drawdown"
+        },
+        {
+          "id": "ptsb-f3-60",
+          "type": "fixed",
+          "term_years": 3,
+          "ltv_max": 60,
+          "rate": 3.65,
+          "aprc": 4.29,
+          "green": false,
+          "cashback": null,
+          "notes": "2% cashback at drawdown"
         },
         {
           "id": "ptsb-f3-80",
@@ -448,54 +1108,87 @@
           "term_years": 3,
           "ltv_max": 80,
           "rate": 3.75,
-          "aprc": 3.82,
+          "aprc": 4.39,
           "green": false,
-          "cashback": 2000,
-          "notes": ""
+          "cashback": null,
+          "notes": "2% cashback at drawdown"
         },
         {
-          "id": "ptsb-f5-80",
+          "id": "ptsb-f3-90",
           "type": "fixed",
-          "term_years": 5,
-          "ltv_max": 80,
-          "rate": 3.85,
-          "aprc": 3.92,
+          "term_years": 3,
+          "ltv_max": 90,
+          "rate": 3.9,
+          "aprc": 4.58,
           "green": false,
-          "cashback": 2000,
-          "notes": ""
+          "cashback": null,
+          "notes": "2% cashback at drawdown"
         },
         {
-          "id": "ptsb-f7-80",
+          "id": "ptsb-f2-60",
           "type": "fixed",
-          "term_years": 7,
-          "ltv_max": 80,
-          "rate": 4.0,
-          "aprc": 4.08,
+          "term_years": 2,
+          "ltv_max": 60,
+          "rate": 4.05,
+          "aprc": 4.45,
           "green": false,
-          "cashback": 2000,
-          "notes": ""
+          "cashback": null,
+          "notes": "2% cashback at drawdown"
+        },
+        {
+          "id": "ptsb-f2-80",
+          "type": "fixed",
+          "term_years": 2,
+          "ltv_max": 80,
+          "rate": 4.2,
+          "aprc": 4.57,
+          "green": false,
+          "cashback": null,
+          "notes": "2% cashback at drawdown"
+        },
+        {
+          "id": "ptsb-f2-90",
+          "type": "fixed",
+          "term_years": 2,
+          "ltv_max": 90,
+          "rate": 4.4,
+          "aprc": 4.78,
+          "green": false,
+          "cashback": null,
+          "notes": "2% cashback at drawdown"
+        },
+        {
+          "id": "ptsb-v-60",
+          "type": "variable",
+          "term_years": null,
+          "ltv_max": 60,
+          "rate": 4.4,
+          "aprc": 4.53,
+          "green": false,
+          "cashback": null,
+          "notes": "2% cashback at drawdown"
         },
         {
           "id": "ptsb-v-80",
           "type": "variable",
           "term_years": null,
           "ltv_max": 80,
-          "rate": 4.15,
-          "aprc": 4.23,
+          "rate": 4.5,
+          "aprc": 4.64,
           "green": false,
           "cashback": null,
-          "notes": ""
+          "notes": "2% cashback at drawdown"
         },
         {
-          "id": "ptsb-g5-80",
-          "type": "fixed",
-          "term_years": 5,
-          "ltv_max": 80,
-          "rate": 3.6,
-          "aprc": 3.67,
-          "green": true,
-          "cashback": 2000,
-          "notes": "BER A or B required"
+          "id": "ptsb-v-90",
+          "type": "variable",
+          "term_years": null,
+          "ltv_max": 90,
+          "rate": 4.7,
+          "aprc": 4.84,
+          "green": false,
+          "cashback": null,
+          "notes": "2% cashback at drawdown"
         }
       ]
     },
@@ -521,48 +1214,92 @@
       "cashback_available": false,
       "rates": [
         {
-          "id": "ebs-f2-90",
+          "id": "ebs-f1-80",
           "type": "fixed",
-          "term_years": 2,
-          "ltv_max": 90,
+          "term_years": 1,
+          "ltv_max": 80,
           "rate": 3.85,
-          "aprc": 3.92,
+          "aprc": 4.3,
           "green": false,
           "cashback": null,
-          "notes": "FTB eligible"
+          "notes": ""
+        },
+        {
+          "id": "ebs-f2-80",
+          "type": "fixed",
+          "term_years": 2,
+          "ltv_max": 80,
+          "rate": 3.9,
+          "aprc": 4.2,
+          "green": false,
+          "cashback": null,
+          "notes": ""
         },
         {
           "id": "ebs-f3-80",
           "type": "fixed",
           "term_years": 3,
           "ltv_max": 80,
-          "rate": 3.8,
-          "aprc": 3.87,
+          "rate": 4.3,
+          "aprc": 4.3,
           "green": false,
           "cashback": null,
           "notes": ""
+        },
+        {
+          "id": "ebs-g4-80",
+          "type": "fixed",
+          "term_years": 4,
+          "ltv_max": 80,
+          "rate": 3.2,
+          "aprc": 3.9,
+          "green": true,
+          "cashback": null,
+          "notes": "EBS Green \u2014 BER A or B required"
         },
         {
           "id": "ebs-f5-80",
           "type": "fixed",
           "term_years": 5,
           "ltv_max": 80,
-          "rate": 3.95,
-          "aprc": 4.02,
+          "rate": 4.4,
+          "aprc": 4.4,
           "green": false,
           "cashback": null,
           "notes": ""
+        },
+        {
+          "id": "ebs-v-50",
+          "type": "variable",
+          "term_years": null,
+          "ltv_max": 50,
+          "rate": 3.75,
+          "aprc": 3.9,
+          "green": false,
+          "cashback": null,
+          "notes": "LTV <=50%"
+        },
+        {
+          "id": "ebs-v-80",
+          "type": "variable",
+          "term_years": null,
+          "ltv_max": 80,
+          "rate": 3.95,
+          "aprc": 4.1,
+          "green": false,
+          "cashback": null,
+          "notes": "LTV >50% to 80%"
         },
         {
           "id": "ebs-v-90",
           "type": "variable",
           "term_years": null,
           "ltv_max": 90,
-          "rate": 4.2,
-          "aprc": 4.28,
+          "rate": 4.15,
+          "aprc": 4.3,
           "green": false,
           "cashback": null,
-          "notes": ""
+          "notes": "LTV >80%"
         }
       ]
     },
@@ -573,7 +1310,7 @@
       "color": "#4A2880",
       "url": "https://www.icsmortgages.ie",
       "affiliate_url": "https://www.icsmortgages.ie",
-      "about": "ICS Mortgages (Irish Civil Service Building Society) is a broker-only non-bank lender backed by Dilosk. They specialise in longer fixed terms and are particularly competitive for buyers with lower LTVs who want rate certainty over a longer period.",
+      "about": "ICS Mortgages is a broker-only non-bank lender backed by Dilosk, established in 1864. Note: ICS applies stricter lending criteria than most lenders \u2014 maximum loan of 2.5x income and a minimum 20% deposit for first-time buyers. Rates correct as of 27 March 2026.",
       "pros": [
         "Competitive longer fixed terms (7\u201330 years)",
         "Good for lower LTV borrowers",
@@ -588,70 +1325,59 @@
       "cashback_available": false,
       "rates": [
         {
-          "id": "ics-f3-75",
+          "id": "ics-v-90",
+          "type": "variable",
+          "term_years": null,
+          "ltv_max": 90,
+          "rate": 4.1,
+          "aprc": 4.22,
+          "green": false,
+          "cashback": null,
+          "notes": "All LTV bands"
+        },
+        {
+          "id": "ics-f3-70",
           "type": "fixed",
           "term_years": 3,
-          "ltv_max": 75,
-          "rate": 3.55,
-          "aprc": 3.62,
+          "ltv_max": 70,
+          "rate": 4.8,
+          "aprc": 4.39,
           "green": false,
           "cashback": null,
           "notes": ""
         },
         {
-          "id": "ics-f5-75",
+          "id": "ics-f3-90",
+          "type": "fixed",
+          "term_years": 3,
+          "ltv_max": 90,
+          "rate": 4.85,
+          "aprc": 4.4,
+          "green": false,
+          "cashback": null,
+          "notes": ""
+        },
+        {
+          "id": "ics-f5-70",
           "type": "fixed",
           "term_years": 5,
-          "ltv_max": 75,
-          "rate": 3.6,
-          "aprc": 3.67,
+          "ltv_max": 70,
+          "rate": 4.9,
+          "aprc": 4.53,
           "green": false,
           "cashback": null,
           "notes": ""
         },
         {
-          "id": "ics-f7-75",
-          "type": "fixed",
-          "term_years": 7,
-          "ltv_max": 75,
-          "rate": 3.7,
-          "aprc": 3.77,
-          "green": false,
-          "cashback": null,
-          "notes": ""
-        },
-        {
-          "id": "ics-f10-75",
-          "type": "fixed",
-          "term_years": 10,
-          "ltv_max": 75,
-          "rate": 3.8,
-          "aprc": 3.88,
-          "green": false,
-          "cashback": null,
-          "notes": ""
-        },
-        {
-          "id": "ics-f20-75",
-          "type": "fixed",
-          "term_years": 20,
-          "ltv_max": 75,
-          "rate": 4.1,
-          "aprc": 4.19,
-          "green": false,
-          "cashback": null,
-          "notes": "Long-term certainty"
-        },
-        {
-          "id": "ics-g5-75",
+          "id": "ics-f5-90",
           "type": "fixed",
           "term_years": 5,
-          "ltv_max": 75,
-          "rate": 3.4,
-          "aprc": 3.47,
-          "green": true,
+          "ltv_max": 90,
+          "rate": 4.95,
+          "aprc": 4.55,
+          "green": false,
           "cashback": null,
-          "notes": "BER A or B"
+          "notes": ""
         }
       ]
     },
@@ -662,7 +1388,7 @@
       "color": "#C25A00",
       "url": "https://www.financeireland.ie/products/residential-mortgages/overview/",
       "affiliate_url": "https://www.financeireland.ie/products/residential-mortgages/overview/",
-      "about": "Finance Ireland is a non-bank lender offering residential and buy-to-let mortgages. They are broker-only and are particularly known for their green mortgage product and flexible criteria for non-standard borrowers.",
+      "about": "Finance Ireland is a non-bank lender backed by Dilosk. They are not currently accepting new residential mortgage applications. Existing customers should contact Finance Ireland directly regarding their current rates.",
       "pros": [
         "Competitive green mortgage rates",
         "Flexible criteria for self-employed and contractors",
@@ -675,63 +1401,7 @@
         "No cashback"
       ],
       "cashback_available": false,
-      "rates": [
-        {
-          "id": "fi-f3-80",
-          "type": "fixed",
-          "term_years": 3,
-          "ltv_max": 80,
-          "rate": 3.7,
-          "aprc": 3.77,
-          "green": false,
-          "cashback": null,
-          "notes": ""
-        },
-        {
-          "id": "fi-f5-80",
-          "type": "fixed",
-          "term_years": 5,
-          "ltv_max": 80,
-          "rate": 3.8,
-          "aprc": 3.87,
-          "green": false,
-          "cashback": null,
-          "notes": ""
-        },
-        {
-          "id": "fi-f7-80",
-          "type": "fixed",
-          "term_years": 7,
-          "ltv_max": 80,
-          "rate": 3.9,
-          "aprc": 3.97,
-          "green": false,
-          "cashback": null,
-          "notes": ""
-        },
-        {
-          "id": "fi-g3-80",
-          "type": "fixed",
-          "term_years": 3,
-          "ltv_max": 80,
-          "rate": 3.45,
-          "aprc": 3.52,
-          "green": true,
-          "cashback": null,
-          "notes": "BER A or B required"
-        },
-        {
-          "id": "fi-g5-80",
-          "type": "fixed",
-          "term_years": 5,
-          "ltv_max": 80,
-          "rate": 3.55,
-          "aprc": 3.62,
-          "green": true,
-          "cashback": null,
-          "notes": "BER A or B required"
-        }
-      ]
+      "rates": []
     }
   ]
 }
